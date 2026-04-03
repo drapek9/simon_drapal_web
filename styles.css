@@ -323,6 +323,19 @@ main > .section:nth-of-type(odd)::before {
   gap: 10px;
   padding: 10px 8px;
   border-radius: 12px;
+  color: inherit;
+  transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.brand:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
+.brand:active {
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .brand:focus-visible {
@@ -336,11 +349,25 @@ main > .section:nth-of-type(odd)::before {
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   box-shadow: 0 0 0 4px rgba(43, 127, 255, 0.18);
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.brand:hover .brand__dot {
+  box-shadow:
+    0 0 0 4px rgba(43, 127, 255, 0.32),
+    0 0 22px rgba(43, 127, 255, 0.45);
+  transform: scale(1.08);
 }
 
 .brand__name {
   font-weight: 800;
   letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 200ms ease;
+}
+
+.brand:hover .brand__name {
+  color: rgba(255, 255, 255, 1);
 }
 
 .nav {
@@ -838,6 +865,97 @@ main > .section:nth-of-type(odd)::before {
   font-size: 0.92rem;
 }
 
+/* Sekce: příklad projektu pro makléře */
+.showcase {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.showcase__header {
+  margin-bottom: 28px;
+}
+
+.showcase__lead {
+  max-width: 640px;
+}
+
+.showcase__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.14fr);
+  gap: clamp(32px, 5vw, 56px);
+  align-items: center;
+  margin-top: 8px;
+}
+
+.showcase__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 520px;
+}
+
+.showcase__highlights {
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+}
+
+.showcase__highlights li {
+  position: relative;
+  padding-left: 30px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.68;
+  font-size: 1.02rem;
+}
+
+.showcase__highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 14px rgba(43, 127, 255, 0.45);
+}
+
+.showcase__mockup {
+  margin: 0;
+  border-radius: var(--radius2);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.28);
+  box-shadow:
+    0 28px 90px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(43, 127, 255, 0.1);
+}
+
+.showcase__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.showcase__cta {
+  align-self: flex-start;
+}
+
+.btn--lg {
+  padding: 15px 30px;
+  font-size: 1.06rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  box-shadow: 0 12px 40px rgba(43, 127, 255, 0.3);
+}
+
+.btn--lg:hover {
+  box-shadow: 0 16px 48px rgba(43, 127, 255, 0.38);
+}
+
 .contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1023,6 +1141,9 @@ main > .section:nth-of-type(odd)::before {
     scroll-behavior: auto;
   }
   .btn,
+  .brand,
+  .brand__dot,
+  .brand__name,
   .nav__link,
   .step,
   .card--service,
@@ -1121,6 +1242,28 @@ main > .section:nth-of-type(odd)::before {
   .grid--3 {
     grid-template-columns: 1fr;
   }
+
+  .showcase {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .showcase__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .showcase__mockup {
+    order: -1;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .showcase__highlights {
+    margin-bottom: 28px;
+  }
+
   .note,
   .ctaBar,
   .ctaInline {

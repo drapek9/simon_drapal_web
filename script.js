@@ -186,7 +186,7 @@ function setupForm() {
 
     if (submitBtn) {
       submitBtn.disabled = false;
-      submitBtn.textContent = old || "Chci víc poptávek — domluvit konzultaci";
+      submitBtn.textContent = old || "Domluvit konzultaci";
     }
 
     form.reset();
