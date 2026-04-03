@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Šimon Drápal — Web pro realitní makléře, který přivádí zájemce o nemovitosti</title>
+    <meta
+      name="description"
+      content="Web na míru pro realitní makléře: víc poptávek, silnější osobní značka a méně závislosti jen na portálech a sociálních sítích. Krátký videohovor, návrh na míru, rozhodnutí bez tlaku."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:title" content="Šimon Drápal — Web pro realitní makléře, který přivádí zájemce" />
+    <meta
+      property="og:description"
+      content="Pomohu vám získat víc dotazů na prohlídky a ocenění nemovitostí díky profesionálnímu webu a vlastnímu online kanálu — ne jen díky Srealitě a feedu na sociálních sítích."
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <a class="skip" href="#obsah">Přeskočit na obsah</a>
+
+    <header class="header" role="banner">
+      <div class="container header__inner">
+        <a class="brand" href="#top" aria-label="Šimon Drápal — weby pro realitní makléře">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span class="brand__name">Šimon Drápal</span>
+        </a>
+
+        <nav class="nav" aria-label="Navigace">
+          <a class="nav__link" href="#proces">Proces</a>
+          <a class="nav__link" href="#o-mne">Proč web</a>
+          <a class="nav__link" href="#prace">Ukázky</a>
+          <a class="nav__link" href="#reference">Reference</a>
+          <a class="btn btn--primary btn--sm js-scroll" href="#kontakt"
+            >Chci víc poptávek</a
+          >
+        </nav>
+
+        <button class="navToggle" type="button" aria-label="Otevřít menu" aria-expanded="false">
+          <span class="navToggle__bar" aria-hidden="true"></span>
+          <span class="navToggle__bar" aria-hidden="true"></span>
+          <span class="navToggle__bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="obsah">
+      <section id="top" class="section hero">
+        <div class="re-hero-bg" aria-hidden="true">
+          <div class="re-hero-bg__glow"></div>
+          <svg class="re-hero-bg__city" viewBox="0 0 1600 380" preserveAspectRatio="xMidYMax slice">
+            <defs>
+              <linearGradient id="reCityFade" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="currentColor" stop-opacity="0.22" />
+                <stop offset="55%" stop-color="currentColor" stop-opacity="0.12" />
+                <stop offset="100%" stop-color="currentColor" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <path
+              fill="url(#reCityFade)"
+              d="M0 380 L0 268 L52 268 L52 292 L90 292 L90 238 L155 238 L155 278 L197 278 L197 252 L255 252 L255 288 L303 288 L303 225 L375 225 L375 298 L411 298 L411 198 L506 198 L506 272 L550 272 L550 244 L605 244 L605 302 L638 302 L638 216 L716 216 L716 268 L766 268 L766 232 L828 232 L828 292 L868 292 L868 205 L956 205 L956 255 L1001 255 L1001 228 L1053 228 L1053 242 L1123 242 L1123 288 L1161 288 L1161 250 L1216 250 L1216 212 L1298 212 L1298 276 L1345 276 L1345 238 L1410 238 L1410 222 L1500 222 L1500 262 L1546 262 L1546 248 L1600 248 L1600 380 L0 380 Z"
+            />
+          </svg>
+        </div>
+        <div class="container hero__grid">
+          <div class="hero__copy reveal">
+            <p class="kicker">Weby pro realitní makléře v Česku</p>
+            <h1 class="h1">
+              Webová stránka pro realitní makléře,<br />
+              <span class="h1__muted">která přináší klienty.</span>
+            </h1>
+            <p class="lead">
+              Webová stránka pro realitní makléře, která Vám pomůže být vidět, působit důvěryhodně a získávat klienty i mimo realitní portály.
+            </p>
+
+            <div class="hero__cta">
+              <a class="btn btn--primary js-scroll" href="#kontakt">Chci víc poptávek od klientů</a>
+              <!-- <a class="btn btn--ghost js-scroll" href="#prace">Ukázky prací</a> -->
+            </div>
+          </div>
+
+          <div class="hero__media reveal">
+            <figure class="portrait" aria-label="Fotka">
+              <img
+                class="portrait__img"
+                src="images/moje_fotka_2.png"
+                alt="Šimon Drápal — tvorba webů pro realitní makléře"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="o-mne" class="section section--tight section--re">
+        <div class="re-sec re-sec--mural-tr" aria-hidden="true">
+          <svg class="re-sec__svg" viewBox="0 0 440 520" preserveAspectRatio="xMidYMid meet">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.36">
+              <path d="M50 440V270l95-68 95 68V440H50z" />
+              <path d="M120 440V340h50V440" />
+              <rect x="165" y="300" width="36" height="28" rx="2" />
+              <path d="M255 440V320h85V440" />
+              <path d="M385 440V300" stroke-width="1.6" />
+              <circle cx="385" cy="252" r="58" stroke-width="1.6" opacity="0.48" />
+              <path d="M30 440h380" stroke-width="1.3" opacity="0.42" />
+              <path d="M72 440V418m40 22V418m40 22V418m40 22V418" stroke-width="1.2" opacity="0.38" />
+            </g>
+          </svg>
+        </div>
+        <div class="container">
+          <div class="split">
+            <div class="split__main reveal">
+              <h2 class="h2">O mně</h2>
+              <p class="p">Tvorbě webových stránek jsem se dříve věnoval napříč různými obory a klienty - od menších živnostníků až po firmy z různých segmentů. Postupem času jsem ale začal vnímat, že největší smysl mi dává práce s realitními makléři.</p>
+              <p class="p">Právě v realitách totiž web není jen vizitka, ale nástroj, který může přímo ovlivňovat počet poptávek a nových klientů. Proto jsem se začal specializovat právě na tento obor.</p>
+              <p class="p">Aktivně se v oblasti realitního marketingu dále vzdělávám a zároveň komunikuji s realitními makléři, abych lépe porozuměl jejich každodenní práci, potřebám a výzvám, se kterými se setkávají. Díky tomu dokážu tvořit weby, které nejsou jen vizuálně moderní, ale hlavně dávají smysl z pohledu získávání klientů.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="proces" class="section section--re">
+        <div class="re-sec re-sec--skyline" aria-hidden="true">
+          <svg class="re-sec__svg" viewBox="0 0 1600 320" preserveAspectRatio="xMidYMax slice">
+            <path
+              fill="currentColor"
+              fill-opacity="0.075"
+              d="M0 320V180L80 160 140 200 220 140 300 190 400 120 520 175 640 110 760 165 880 130 1000 180 1120 100 1240 160 1360 90 1480 150 1600 110V320H0z"
+            />
+            <path
+              fill="currentColor"
+              fill-opacity="0.045"
+              d="M0 320V235L100 255 200 218 320 248 450 198 580 242 720 192 860 232 1000 182 1150 228 1300 172 1450 212 1600 188V320H0z"
+            />
+          </svg>
+        </div>
+        <div class="container">
+          <header class="section__header reveal">
+            <h2 class="h2">Dělám věci trochu jinak</h2>
+            <p class="p p--muted">
+              Nejprve zjistím, jak prodáváte teď a kam má web směřovat — pak uvidíte návrh na míru pro makléře.
+              Žádný nátlak: jde o to, jestli vám řešení sedí a přinese víc poptávek.
+            </p>
+          </header>
+
+          <div class="steps">
+            <article class="step reveal">
+              <div class="step__badge">1</div>
+              <h3 class="h3">Krátký videohovor (10–15 min)</h3>
+              <p class="p">
+                Probereme váš segment (byty, domy, investice…), odkud dnes berete klienty a co vám na webu
+                nejvíc chybí — víc kontaktů z Google, důvěra, showcase referencí, nebo jasná nabídka služeb.
+              </p>
+            </article>
+
+            <article class="step reveal">
+              <div class="step__badge">2</div>
+              <h3 class="h3">Návrh na míru</h3>
+              <p class="p">
+                Dodám konkrétní koncept: struktura stránek, co na první pohled uvidí kupující nebo prodávající,
+                kam povede tlačítko nebo formulář. Uvidíte, jak by web tahal poptávky v praxi, ne jen „nějaký design“.
+              </p>
+            </article>
+
+            <article class="step reveal">
+              <div class="step__badge">3</div>
+              <h3 class="h3">Společné projití + rozhodnutí</h3>
+              <p class="p">
+                Projdete si návrh a odhad dopadu na vaše leady a image. Rozhodnutí je na vás — bez závazku
+                hned po prvním hovoru.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="video" class="section section--tight section--re">
+        <div class="container">
+          <div class="re-sec re-sec--questions" aria-hidden="true">
+            <svg class="re-sec__svg" viewBox="0 0 560 320" preserveAspectRatio="xMidYMid meet">
+              <text
+                x="42"
+                y="118"
+                font-size="136"
+                font-weight="800"
+                font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif"
+                fill="currentColor"
+              >
+                ?
+              </text>
+              <text
+                x="198"
+                y="278"
+                font-size="202"
+                font-weight="800"
+                font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif"
+                fill="currentColor"
+              >
+                ?
+              </text>
+              <text
+                x="378"
+                y="168"
+                font-size="162"
+                font-weight="800"
+                font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif"
+                fill="currentColor"
+              >
+                ?
+              </text>
+            </svg>
+          </div>
+          <div class="video reveal">
+            <div class="video__frame" role="group" aria-label="Video: spolupráce pro realitní makléře">
+              <video class="video__player" controls preload="metadata">
+                <source src="videos/video.mp4" type="video/mp4" />
+                Váš prohlížeč nepodporuje přehrávání videa.
+              </video>
+            </div>
+
+            <div class="video__copy">
+              <h2 class="h2">Jak probíhá spolupráce?</h2>
+              <p class="p">
+                Ve videu shrnu, jak stavíme web pro makléře od cíle (víc poptávek, silnější brand) k hotovému
+                návrhu — a proč dává smysl nejdřív si ujasnit váš způsob prodeje, ne barvu patičky.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sluzby" class="section">
+        <div class="container">
+          <header class="section__header reveal">
+            <h2 class="h2">Služby</h2>
+            <p class="p p--muted">
+              Web jako prodejní nástroj makléře: od prvního dojmu po měřitelné kontakty. Navrhnu jen to, co dává smysl vašemu růstu.
+            </p>
+          </header>
+
+          <div class="grid grid--3">
+            <article class="card card--service reveal">
+              <h3 class="h3">Tvorba webových stránek a e‑shopů</h3>
+              <p class="p">
+                One‑pager nebo více stránek: výpis nabídky, váš příběh, služby (prodej, pronájem, ocenění),
+                formulář a callback. Mobil je u makléřů standard — web na něm musí konvertovat stejně dobře.
+              </p>
+              <ul class="mini">
+                <li>jasné CTA: zavolat, napsat, nechat kontakt</li>
+                <li>struktura pro důvěru: reference, lokality, proces</li>
+                <li>rychlost načítání a responzivita</li>
+              </ul>
+            </article>
+
+            <article class="card card--service reveal">
+              <h3 class="h3">SEO + analytika</h3>
+              <p class="p">
+                Ať vás lidé najdou na „realitní makléř [město]“ nebo podle typu služby. Technický základ SEO, obsahové struktury
+                a měření — kolik lidí přišlo a kolik z nich nechalo kontakt.
+              </p>
+              <ul class="mini">
+                <li>meta titulky a popisy pro lokality / služby</li>
+                <li>struktura pro Google i pro člověka</li>
+                <li>analytika a konverzní cíle</li>
+              </ul>
+            </article>
+
+            <article class="card card--service reveal">
+              <h3 class="h3">Hosting a technické nastavení</h3>
+              <p class="p">
+                Doména typu vaše-jmeno.cz, HTTPS, zálohy a provoz bez starostí — aby návštěvník v kritické chvíli
+                nenarazil na pomalý nebo nedostupný web.
+              </p>
+              <ul class="mini">
+                <li>doména + DNS</li>
+                <li>nasazení a provoz</li>
+                <li>základní zabezpečení</li>
+              </ul>
+            </article>
+
+            <article class="card card--service reveal">
+              <h3 class="h3">Grafické materiály (dle potřeby)</h3>
+              <p class="p">
+                Sjednocení vizuálu s webem: vizitky, polep auta, šablony pro Stories nebo jednoduché podklady,
+                aby vás lidé poznali napříč portály a sociálními sítěmi.
+              </p>
+              <ul class="mini">
+                <li>vizitky, cedule, základní šablony</li>
+                <li>jednoduchá vizuální linka „váš web = váš brand“</li>
+                <li>propojení s komunikací na Instagramu / Facebooku</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="prace" class="section section--tight">
+        <div class="container">
+          <header class="section__header reveal">
+            <h2 class="h2">Ukázky prací</h2>
+            <p class="p p--muted">
+              Ukázky níže jsou ukázkové scénáře pro makléře. Po doplnění vašich reálných realizací budou reference přesně sedět na vaši praxi.
+            </p>
+          </header>
+
+          <div class="grid grid--3">
+            <article class="work reveal">
+              <div class="work__top">
+                <h3 class="h3">Makléř — rodinné domy a byty</h3>
+                <p class="work__meta">Osobní web • cíl: víc dotazů na prohlídky</p>
+              </div>
+              <p class="p">
+                Důraz na působivou úvodní stránku, filtr nabídky a jedno hlavní CTA — zájemce hned ví, jak vás kontaktovat.
+              </p>
+            </article>
+
+            <article class="work reveal">
+              <div class="work__top">
+                <h3 class="h3">Makléř — lokální expert</h3>
+                <p class="work__meta">Vícestránkový web • cíl: důvěra a leady</p>
+              </div>
+              <p class="p">
+                Sekce reference, mapa lokality, časté otázky prodávajících a jasný proces spolupráce — web buduje autoritu před prvním hovorem.
+              </p>
+            </article>
+
+            <article class="work reveal">
+              <div class="work__top">
+                <h3 class="h3">Tým / menší kancelář</h3>
+                <p class="work__meta">Prezentace značky • cíl: kvalitní poptávky</p>
+              </div>
+              <p class="p">
+                Společná vizuální linka, představení makléřů a směrování kontaktů tak, aby se leady neztrácely mezi lidmi.
+              </p>
+            </article>
+          </div>
+
+          <div class="note reveal">
+            <p class="p">
+              Působíte v konkrétní lokalitě nebo segmentu? Napište mi to ve formuláři — pošlu relevantnější vzory a nastavení.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="reference" class="section">
+        <div class="container">
+          <header class="section__header reveal">
+            <h2 class="h2">Reference</h2>
+            <p class="p p--muted">Ukázkové reakce makléřů — po reálných projektech je nahradíte vlastními citacemi.</p>
+          </header>
+
+          <div class="grid grid--3">
+            <figure class="quote reveal">
+              <blockquote class="quote__text">
+                „Konečně web, který neukazuje jen inzeráty, ale prodává mě jako člověka. Volání a zprávy z webu šly nahoru.“
+              </blockquote>
+              <figcaption class="quote__by">Realitní makléř (ukázka)</figcaption>
+            </figure>
+
+            <figure class="quote reveal">
+              <blockquote class="quote__text">
+                „Proces byl přehledný — nejdřív call, pak návrh. Na první dobrou bylo vidět, jak web nasměruje lidi na kontakt.“
+              </blockquote>
+              <figcaption class="quote__by">Realitní makléř (ukázka)</figcaption>
+            </figure>
+
+            <figure class="quote reveal">
+              <blockquote class="quote__text">
+                „Méně závislosti jen na portálu — lidé mě najdou a vědí, proč si vybrat zrovna mě. Poptávky jsou víc cílené.“
+              </blockquote>
+              <figcaption class="quote__by">Realitní makléř (ukázka)</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontakt" class="section section--tight">
+        <div class="container">
+          <div class="contact">
+            <div class="contact__copy reveal">
+              <h2 class="h2">Chcete víc poptávek z vlastního webu?</h2>
+              <p class="p">
+                Vyplňte formulář — ozvu se do <strong>24 hodin</strong>. Probereme, odkud dnes berete klienty, co vám na webu chybí
+                a jestli řešení dává smysl pro váš styl prodeje. Konzultace je nezávazná.
+              </p>
+
+              <div class="pillRow" aria-label="Rychlé info">
+                <span class="pill">Odpověď do 24 hodin</span>
+                <span class="pill">Návrh na míru bez tlaku</span>
+              </div>
+
+              <div class="contact__cta">
+                <a class="btn btn--ghost js-scroll" href="#proces">Jak probíhá spolupráce</a>
+              </div>
+            </div>
+
+            <div class="contact__form reveal">
+              <form class="form" id="contactForm" novalidate>
+                <div class="form__row">
+                  <div class="field">
+                    <label for="firstName">Jméno</label>
+                    <input id="firstName" name="firstName" autocomplete="given-name" required />
+                    <p class="field__error" aria-live="polite"></p>
+                  </div>
+                  <div class="field">
+                    <label for="lastName">Příjmení</label>
+                    <input id="lastName" name="lastName" autocomplete="family-name" required />
+                    <p class="field__error" aria-live="polite"></p>
+                  </div>
+                </div>
+
+                <div class="form__row">
+                  <div class="field">
+                    <label for="phone">Telefon</label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      inputmode="tel"
+                      autocomplete="tel"
+                      required
+                    />
+                    <p class="field__error" aria-live="polite"></p>
+                  </div>
+                  <div class="field">
+                    <label for="email">E‑mail</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required />
+                    <p class="field__error" aria-live="polite"></p>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="about">Vaše praxe a cíl webu</label>
+                  <textarea
+                    id="about"
+                    name="about"
+                    rows="5"
+                    required
+                    placeholder="Kde působíte (město/region), co prodáváte nejčastěji, odkud máte klienty dnes (Sreality, sociální sítě, doporučení) a co chcete od webu nejvíc — víc hovorů, formulářů, rezervací…"
+                  ></textarea>
+                  <p class="field__error" aria-live="polite"></p>
+                </div>
+
+                <div class="field">
+                  <label for="website">Aktuální web (nepovinné)</label>
+                  <input
+                    id="website"
+                    name="website"
+                    type="url"
+                    inputmode="url"
+                    autocomplete="url"
+                    placeholder="https://"
+                  />
+                  <p class="field__error" aria-live="polite"></p>
+                </div>
+
+                <div class="form__actions">
+                  <button class="btn btn--primary btn--block" type="submit">
+                    Chci víc poptávek — domluvit konzultaci
+                  </button>
+                  <p class="form__note">
+                    Bez spamu. Údaje použiju jen na odpověď a domluvu krátké konzultace ohledně vašeho makléřského webu.
+                  </p>
+                </div>
+
+                <div class="form__success" role="status" aria-live="polite" hidden>
+                  <strong>Děkuju.</strong> Ozvu se do 24 hodin.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__left">
+          <p class="footer__brand">Šimon Drápal</p>
+          <p class="footer__meta">
+            <a class="footer__link" href="mailto:simondrapal9@gmail.com">simondrapal9@gmail.com</a>
+            <span class="footer__sep" aria-hidden="true">•</span>
+            <a class="footer__link" href="tel:+420774564728">+420 774 564 728</a>
+          </p>
+        </div>
+
+        <div class="footer__right">
+          <a class="btn btn--primary btn--sm js-scroll" href="#kontakt">Chci víc poptávek</a>
+          <p class="footer__copy">© <span id="year"></span> Šimon Drápal</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
