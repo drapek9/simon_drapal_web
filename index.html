@@ -49,9 +49,11 @@
         </nav>
 
         <button class="navToggle" type="button" aria-label="Otevřít menu" aria-expanded="false">
-          <span class="navToggle__bar" aria-hidden="true"></span>
-          <span class="navToggle__bar" aria-hidden="true"></span>
-          <span class="navToggle__bar" aria-hidden="true"></span>
+          <span class="navToggle__inner" aria-hidden="true">
+            <span class="navToggle__bar"></span>
+            <span class="navToggle__bar"></span>
+            <span class="navToggle__bar"></span>
+          </span>
         </button>
       </div>
     </header>
@@ -371,6 +373,11 @@
 
           <div class="showcase__process reveal">
             <h3 class="showcase__subhd showcase__subhd--process">Postup spolupráce</h3>
+            <p class="showcase__swipe-hint" aria-hidden="true">
+              <span class="showcase__swipe-hint__text">Swipe doprava</span>
+              <span class="showcase__swipe-hint__arrow"></span>
+            </p>
+            <div class="showcase__timeline-rail">
             <ol class="showcase__timeline" aria-label="Postup spolupráce u projektu">
               <li class="showcase__tstep">
                 <span class="showcase__tstep-num" aria-hidden="true">1</span>
@@ -409,6 +416,7 @@
                 </div>
               </li>
             </ol>
+            </div>
           </div>
         </div>
       </section>

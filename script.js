@@ -170,6 +170,72 @@ function setupMobileNav() {
   });
 }
 
+/** Mobil: nápověda „Swipe“ u časové osy v sekci Příklad projektu — schová se po posunu nebo bez overflow. */
+function setupShowcaseTimelineSwipeHint() {
+  const rail = $(".showcase__timeline-rail");
+  const ol = $(".showcase__timeline");
+  const hint = $(".showcase__swipe-hint");
+  if (!rail || !ol || !hint) return;
+
+  const mq = window.matchMedia("(max-width: 980px)");
+  let bound = false;
+
+  const syncEndState = () => {
+    const maxScroll = ol.scrollWidth - ol.clientWidth - 1;
+    if (maxScroll <= 0) {
+      rail.classList.add("showcase__timeline-rail--end");
+      hint.classList.add("showcase__swipe-hint--done");
+      return;
+    }
+    if (ol.scrollLeft >= maxScroll) {
+      rail.classList.add("showcase__timeline-rail--end");
+    } else {
+      rail.classList.remove("showcase__timeline-rail--end");
+    }
+  };
+
+  const onScroll = () => {
+    if (ol.scrollLeft > 16) {
+      hint.classList.add("showcase__swipe-hint--done");
+    }
+    syncEndState();
+  };
+
+  const bind = () => {
+    if (!mq.matches || bound) return;
+    bound = true;
+    ol.addEventListener("scroll", onScroll, { passive: true });
+    syncEndState();
+  };
+
+  const unbind = () => {
+    if (!bound) return;
+    bound = false;
+    ol.removeEventListener("scroll", onScroll);
+    rail.classList.remove("showcase__timeline-rail--end");
+    hint.classList.remove("showcase__swipe-hint--done");
+  };
+
+  const sync = () => {
+    if (mq.matches) {
+      bind();
+      requestAnimationFrame(() => {
+        syncEndState();
+      });
+    } else {
+      unbind();
+    }
+  };
+
+  if (typeof mq.addEventListener === "function") {
+    mq.addEventListener("change", sync);
+  } else {
+    mq.addListener(sync);
+  }
+  window.addEventListener("resize", sync);
+  sync();
+}
+
 function setFieldError(fieldEl, message) {
   const wrapper = fieldEl.closest(".field");
   if (!wrapper) return;
@@ -340,4 +406,5 @@ setupNavCurrentSection();
 setupSmoothScroll();
 setupMobileNav();
 setupReveal();
+setupShowcaseTimelineSwipeHint();
 setupForm();

@@ -407,19 +407,33 @@ main > .section:nth-of-type(odd)::before {
 
 .navToggle {
   display: none;
+  appearance: none;
+  -webkit-appearance: none;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 14px;
+  border: 0;
+  border-radius: 0;
   padding: 10px 12px;
   color: var(--text);
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+/* Flex na vnitřním spanu — u <button> často nefunguje column na mobilu (WebKit). */
+.navToggle__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .navToggle__bar {
   display: block;
   width: 20px;
   height: 2px;
+  flex-shrink: 0;
   background: rgba(255, 255, 255, 0.86);
-  margin: 4px 0;
+  margin: 0;
   border-radius: 2px;
 }
 
@@ -600,6 +614,10 @@ main > .section:nth-of-type(odd)::before {
 @media (min-width: 981px) {
   .hero__grid .hero__media {
     margin-left: -20px;
+  }
+
+  .navToggle {
+    display: none;
   }
 }
 
@@ -1151,6 +1169,26 @@ main > .section:nth-of-type(odd)::before {
   color: rgba(255, 255, 255, 0.9);
 }
 
+.showcase__swipe-hint {
+  display: none;
+}
+
+.showcase__timeline-rail {
+  display: contents;
+}
+
+@keyframes showcaseSwipeArrow {
+  0%,
+  100% {
+    transform: translateX(0) rotate(45deg);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateX(7px) rotate(45deg);
+    opacity: 1;
+  }
+}
+
 .showcase__preview-col {
   display: flex;
   flex-direction: column;
@@ -1489,6 +1527,9 @@ main > .section:nth-of-type(odd)::before {
   .about-photo:hover {
     transform: none;
   }
+  .showcase__swipe-hint__arrow {
+    animation: none;
+  }
 }
 
 @media (max-width: 980px) {
@@ -1573,22 +1614,27 @@ main > .section:nth-of-type(odd)::before {
     width: 100%;
   }
   .steps {
+    --steps-stack-gap: clamp(40px, 8vw, 56px);
     grid-template-rows: auto;
     min-height: 0;
-    row-gap: 0;
+    row-gap: var(--steps-stack-gap);
   }
 
   .steps__row {
     display: contents;
   }
 
-  /* Šipky mezi kartami (mobil: dolů) */
-  .steps__row .step:not(:last-child)::before {
+  /* Mobil: šipky dolů v mezeře mezi kartami (desktop beze změny výše 980px). */
+  .steps__row .step:not(:last-child)::before,
+  .steps__row:first-child > .step:last-child::before {
     top: auto;
     right: auto;
     left: 50%;
-    bottom: -28px;
+    bottom: calc(-0.5 * var(--steps-stack-gap));
     transform: translate(-50%, 50%) rotate(135deg);
+    border-right: 2px solid rgba(43, 127, 255, 0.85);
+    border-top: 2px solid rgba(43, 127, 255, 0.85);
+    filter: drop-shadow(0 6px 14px rgba(43, 127, 255, 0.18));
   }
   .grid--3 {
     grid-template-columns: 1fr;
@@ -1627,7 +1673,67 @@ main > .section:nth-of-type(odd)::before {
   }
 
   .showcase__subhd--process {
-    margin-bottom: 22px;
+    margin-bottom: 16px;
+  }
+
+  .showcase__swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 0 0 12px;
+    padding-right: 2px;
+    max-height: 4rem;
+    font-size: 0.8rem;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    transition: opacity 0.35s ease, max-height 0.35s ease, margin 0.35s ease, padding 0.35s ease;
+  }
+
+  .showcase__swipe-hint--done {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .showcase__swipe-hint__arrow {
+    display: block;
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    border-right: 2px solid rgba(43, 127, 255, 0.92);
+    border-top: 2px solid rgba(43, 127, 255, 0.92);
+    filter: drop-shadow(0 0 10px rgba(43, 127, 255, 0.35));
+    animation: showcaseSwipeArrow 1.35s ease-in-out infinite;
+  }
+
+  .showcase__timeline-rail {
+    display: block;
+    position: relative;
+  }
+
+  .showcase__timeline-rail::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 20px;
+    width: 44px;
+    pointer-events: none;
+    z-index: 2;
+    background: linear-gradient(90deg, transparent, rgba(7, 11, 22, 0.88));
+    transition: opacity 0.35s ease;
+  }
+
+  .showcase__timeline-rail--end::after {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .showcase__timeline {
@@ -1637,7 +1743,7 @@ main > .section:nth-of-type(odd)::before {
     gap: 8px var(--showcase-t-hgap);
     overflow-x: auto;
     overflow-y: visible;
-    padding-bottom: 6px;
+    padding-bottom: 20px;
     scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
     scrollbar-gutter: stable;
@@ -1674,17 +1780,19 @@ main > .section:nth-of-type(odd)::before {
   }
 
   .navToggle {
-    display: inline-flex;
+    display: inline-block;
+    margin-left: auto;
+    vertical-align: middle;
   }
 
   .nav {
     position: fixed;
-  top: var(--header-h);
+    top: var(--header-h);
     right: 16px;
     left: 16px;
     padding: 12px;
     background: rgba(7, 11, 22, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 0;
     border-radius: 18px;
     backdrop-filter: blur(14px);
     box-shadow: var(--shadow);
