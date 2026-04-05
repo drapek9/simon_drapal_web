@@ -395,6 +395,18 @@ main > .section:nth-of-type(odd)::before {
   outline-offset: 2px;
 }
 
+.nav a.nav--current {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  text-decoration-color: rgba(43, 127, 255, 0.85);
+}
+
+.nav a.nav--current.nav__link:hover {
+  text-decoration-color: rgba(34, 211, 238, 0.75);
+}
+
 .navToggle {
   display: none;
   background: transparent;
@@ -448,6 +460,12 @@ main > .section:nth-of-type(odd)::before {
 .btn--primary:hover {
   box-shadow: 0 18px 55px rgba(43, 127, 255, 0.28);
   transform: translateY(-1px);
+}
+
+/* Jediné CTA v hlavičce — bez vizuální změny při hoveru */
+.nav .btn.btn--primary:hover {
+  box-shadow: 0 16px 40px rgba(43, 127, 255, 0.22);
+  transform: none;
 }
 
 .btn--ghost {
@@ -542,9 +560,9 @@ main > .section:nth-of-type(odd)::before {
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 28px;
-  align-items: start;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+  gap: clamp(28px, 5vw, 52px);
+  align-items: center;
 }
 
 .hero__cta {
@@ -556,9 +574,35 @@ main > .section:nth-of-type(odd)::before {
 
 .hero__media {
   position: relative;
-  display: grid;
-  gap: 14px;
-  align-self: start;
+  display: block;
+  align-self: center;
+  min-width: 0;
+}
+
+/* Hero: fotka bez „rámečku“ — žádný border, stín ani zaoblení jako u karty */
+.hero-visual {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  overflow: hidden;
+}
+
+.hero-visual__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+@media (min-width: 981px) {
+  .hero__grid .hero__media {
+    margin-left: -20px;
+  }
 }
 
 .portrait {
@@ -625,6 +669,31 @@ main > .section:nth-of-type(odd)::before {
   grid-template-columns: 1fr;
 }
 
+.split--about {
+  align-items: center;
+}
+
+.split__media {
+  min-width: 0;
+}
+
+.about-photo {
+  margin: 0;
+  border-radius: var(--radius2);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: var(--shadow);
+}
+
+.about-photo__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
 .list {
   margin: 0 0 14px;
   padding-left: 18px;
@@ -633,14 +702,34 @@ main > .section:nth-of-type(odd)::before {
 }
 
 .steps {
+  --steps-gap: clamp(28px, 3vw, 44px);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: var(--steps-gap);
+  min-height: clamp(26rem, 46vh, 38rem);
+  position: relative;
+}
+
+.steps__row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 56px;
-  position: relative;
+  column-gap: var(--steps-gap);
+  min-height: 0;
+  height: 100%;
+  align-items: stretch;
+}
+
+.steps__row--pair {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .step {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
   padding: 20px 18px 18px;
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.06);
@@ -648,12 +737,34 @@ main > .section:nth-of-type(odd)::before {
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
 }
 
-/* Šipky mezi kartami (bez kolečka, jen chevron — desktop: doprava) */
-.step:not(:last-child)::before {
+.step .p {
+  flex: 1 1 auto;
+  margin-bottom: 0;
+}
+
+/* Šipky v řádku (desktop: doprava) */
+.steps__row .step:not(:last-child)::before {
   content: "";
   position: absolute;
   top: 50%;
-  right: -28px;
+  right: calc(-0.5 * var(--steps-gap));
+  width: 16px;
+  height: 16px;
+  transform: translate(50%, -50%) rotate(45deg);
+  border-right: 2px solid rgba(43, 127, 255, 0.85);
+  border-top: 2px solid rgba(43, 127, 255, 0.85);
+  filter: drop-shadow(0 6px 14px rgba(43, 127, 255, 0.18));
+  pointer-events: none;
+}
+
+/* Třetí karta: šipka doprava (jako 1 a 2) */
+.steps__row:first-child > .step:last-child::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(-0.5 * var(--steps-gap));
+  left: auto;
+  bottom: auto;
   width: 16px;
   height: 16px;
   transform: translate(50%, -50%) rotate(45deg);
@@ -894,44 +1005,180 @@ main > .section:nth-of-type(odd)::before {
   max-width: 520px;
 }
 
-.showcase__highlights {
+.showcase__subhd {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.showcase__subhd--process {
+  margin-bottom: 28px;
+}
+
+.showcase__case-intro {
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 38rem;
+}
+
+.showcase__goals-label {
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.showcase__goal-list {
   list-style: none;
   margin: 0 0 36px;
   padding: 0;
   display: grid;
-  gap: 18px;
+  gap: 12px;
 }
 
-.showcase__highlights li {
+.showcase__goal-list li {
   position: relative;
-  padding-left: 30px;
+  padding-left: 22px;
   margin: 0;
   color: var(--muted);
-  line-height: 1.68;
+  line-height: 1.65;
   font-size: 1.02rem;
 }
 
-.showcase__highlights li::before {
+.showcase__goal-list li::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0.55em;
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
-  box-shadow: 0 0 14px rgba(43, 127, 255, 0.45);
+  box-shadow: 0 0 12px rgba(43, 127, 255, 0.4);
 }
 
-.showcase__mockup {
+.showcase__process {
+  margin-top: 64px;
+}
+
+.showcase__timeline {
+  --showcase-t-hgap: clamp(8px, 1.4vw, 16px);
+  --showcase-badge-size: 36px;
+  list-style: none;
   margin: 0;
-  border-radius: var(--radius2);
-  overflow: hidden;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px var(--showcase-t-hgap);
+  position: relative;
+  max-width: 100%;
+  align-items: start;
+}
+
+/* Úsečky jen mezi kolečky čísel (ne pod nimi) */
+.showcase__tstep:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(50% + var(--showcase-badge-size) * 0.5);
+  top: calc(var(--showcase-badge-size) * 0.5 - 1px);
+  width: calc(100% - var(--showcase-badge-size) + var(--showcase-t-hgap));
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(43, 127, 255, 0.5),
+    rgba(34, 211, 238, 0.28)
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.showcase__tstep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  min-width: 0;
+}
+
+.showcase__tstep-num {
+  width: var(--showcase-badge-size);
+  height: var(--showcase-badge-size);
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.96);
+  background: linear-gradient(145deg, rgba(43, 127, 255, 0.32), rgba(34, 211, 238, 0.1));
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(0, 0, 0, 0.28);
-  box-shadow:
-    0 28px 90px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(43, 127, 255, 0.1);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.showcase__tstep-body {
+  width: 100%;
+  padding: 4px 2px 0;
+  box-sizing: border-box;
+}
+
+.showcase__tstep-title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: -0.01em;
+  line-height: 1.32;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.showcase__preview-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.showcase__open-tab {
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+/* Jen samotný náhled — bez rámečku, lišty a popisku */
+.showcase__preview {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 0;
+  height: clamp(320px, 52vh, 580px);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: #fff;
+  overflow: hidden;
+  /* Posun nahoru = skrytí horní lišty vloženého webu; 0 = plná horní část stránky */
+  --showcase-iframe-crop-top: 0px;
+}
+
+.showcase__iframe {
+  position: absolute;
+  top: calc(-1 * var(--showcase-iframe-crop-top));
+  left: 0;
+  width: 100%;
+  height: calc(100% + var(--showcase-iframe-crop-top));
+  border: 0;
+  display: block;
 }
 
 .showcase__img {
@@ -1071,56 +1318,112 @@ main > .section:nth-of-type(odd)::before {
 }
 
 .footer {
-  padding: 26px 0;
+  padding: 48px 0 28px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(7, 11, 22, 0.55);
   backdrop-filter: blur(14px);
 }
 
-.footer__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+.footer__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) minmax(0, 0.75fr);
+  gap: clamp(28px, 4vw, 48px);
+  align-items: start;
 }
 
-.footer__brand {
-  margin: 0 0 6px;
-  font-weight: 900;
-}
-
-.footer__meta {
+.footer__tagline {
   margin: 0;
-  color: var(--muted2);
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.footer__heading {
+  margin: 0 0 14px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer__contact {
+  margin: 0;
+}
+
+.footer__contact-row {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  column-gap: 10px;
+  row-gap: 2px;
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.footer__contact-row:last-child {
+  margin-bottom: 0;
+}
+
+.footer__contact dt {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.42);
+  font-weight: 600;
+}
+
+.footer__contact dd {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .footer__link {
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.18);
-  text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 160ms ease, color 160ms ease;
 }
 
 .footer__link:hover {
+  color: #fff;
   text-decoration-color: rgba(43, 127, 255, 0.55);
 }
 
-.footer__sep {
-  margin: 0 8px;
-  color: rgba(255, 255, 255, 0.35);
-}
-
-.footer__right {
-  display: grid;
-  justify-items: end;
-  gap: 10px;
-}
-
-.footer__copy {
+.footer__nav {
+  list-style: none;
   margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.footer__nav-link {
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.footer__nav-link:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.footer__nav-link:focus-visible {
+  outline: 2px solid rgba(43, 127, 255, 0.65);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.footer__copyright {
+  margin: 40px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 0.86rem;
   color: var(--muted2);
-  font-size: 0.92rem;
+  text-align: center;
+  letter-spacing: 0.02em;
 }
 
 /* Reveal animation (JS toggles .is-visible) */
@@ -1219,20 +1522,37 @@ main > .section:nth-of-type(odd)::before {
   .hero__grid {
     grid-template-columns: 1fr;
   }
-  .portrait__img {
-    height: 280px;
+
+  .hero-visual__img {
+    aspect-ratio: 4 / 3;
+    max-height: min(52vh, 380px);
+    object-position: center 25%;
   }
   .split,
   .video,
   .contact {
     grid-template-columns: 1fr;
   }
+
+  .split__media {
+    order: -1;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
   .steps {
-    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    min-height: 0;
+    row-gap: 0;
+  }
+
+  .steps__row {
+    display: contents;
   }
 
   /* Šipky mezi kartami (mobil: dolů) */
-  .step:not(:last-child)::before {
+  .steps__row .step:not(:last-child)::before {
     top: auto;
     right: auto;
     left: 50%;
@@ -1253,15 +1573,57 @@ main > .section:nth-of-type(odd)::before {
     gap: 36px;
   }
 
-  .showcase__mockup {
+  .showcase__preview-col {
     order: -1;
     max-width: 640px;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    align-items: center;
   }
 
-  .showcase__highlights {
+  .showcase__preview {
+    width: 100%;
+    height: clamp(280px, 48vh, 420px);
+  }
+
+  .showcase__goal-list {
     margin-bottom: 28px;
+  }
+
+  .showcase__process {
+    margin-top: 48px;
+  }
+
+  .showcase__subhd--process {
+    margin-bottom: 22px;
+  }
+
+  .showcase__timeline {
+    --showcase-t-hgap: 10px;
+    --showcase-badge-size: 32px;
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
+    gap: 8px var(--showcase-t-hgap);
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 6px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: stable;
+  }
+
+  .showcase__tstep {
+    scroll-snap-align: start;
+  }
+
+  .showcase__tstep-num {
+    font-size: 0.82rem;
+    border-radius: 9px;
+  }
+
+  .showcase__tstep-title {
+    font-size: 0.72rem;
+    line-height: 1.3;
   }
 
   .note,
@@ -1270,8 +1632,14 @@ main > .section:nth-of-type(odd)::before {
     flex-direction: column;
     align-items: stretch;
   }
-  .footer__right {
-    justify-items: start;
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer__copyright {
+    text-align: left;
+    margin-top: 32px;
   }
 
   .navToggle {

@@ -5,11 +5,6 @@ function prefersReducedMotion() {
   return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-function setupYear() {
-  const el = $("#year");
-  if (el) el.textContent = String(new Date().getFullYear());
-}
-
 function setupSmoothScroll() {
   const links = $$(".js-scroll[href^=\"#\"]");
   for (const a of links) {
@@ -27,8 +22,71 @@ function setupSmoothScroll() {
         const btn = $(".navToggle");
         if (btn) btn.setAttribute("aria-expanded", "false");
       }
+
+      requestAnimationFrame(() => {
+        if (typeof updateNavCurrentSection === "function") updateNavCurrentSection();
+      });
     });
   }
+}
+
+/** Pořadí sekcí odpovídá kotvám v navigaci (sekce mimo nav se přiřadí k poslední „překročené“). */
+const NAV_SECTION_IDS = ["top", "o-mne", "proces", "priklad-projektu", "kontakt"];
+
+let updateNavCurrentSection = () => {};
+
+function setupNavCurrentSection() {
+  const nav = $(".nav");
+  if (!nav) return;
+
+  const anchors = $$("a[href^=\"#\"]", nav).filter((a) => {
+    const h = a.getAttribute("href");
+    return h && h.length > 1;
+  });
+
+  updateNavCurrentSection = () => {
+    const header = $(".header");
+    const offset = header ? header.getBoundingClientRect().height + 12 : 72;
+    let activeId = NAV_SECTION_IDS[0];
+
+    for (const id of NAV_SECTION_IDS) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      if (el.getBoundingClientRect().top <= offset) {
+        activeId = id;
+      }
+    }
+
+    for (const a of anchors) {
+      if (a.classList.contains("btn")) {
+        a.classList.remove("nav--current");
+        a.removeAttribute("aria-current");
+        continue;
+      }
+      const id = (a.getAttribute("href") || "").slice(1);
+      const on = id === activeId;
+      a.classList.toggle("nav--current", on);
+      if (on) {
+        a.setAttribute("aria-current", "page");
+      } else {
+        a.removeAttribute("aria-current");
+      }
+    }
+  };
+
+  let ticking = false;
+  const schedule = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      updateNavCurrentSection();
+    });
+  };
+
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", schedule);
+  updateNavCurrentSection();
 }
 
 function setupReveal() {
@@ -197,7 +255,7 @@ function setupForm() {
   });
 }
 
-setupYear();
+setupNavCurrentSection();
 setupSmoothScroll();
 setupMobileNav();
 setupReveal();

@@ -32,12 +32,11 @@
         </a>
 
         <nav class="nav" aria-label="Navigace">
-          <a class="nav__link" href="#proces">Proces</a>
-          <a class="nav__link" href="#o-mne">Proč web</a>
-          <a class="nav__link" href="#priklad-projektu">Ukázka projektu</a>
-          <a class="btn btn--primary btn--sm js-scroll" href="#kontakt"
-            >Domluvit konzultaci</a
-          >
+          <a class="nav__link js-scroll" href="#top">Úvod</a>
+          <a class="nav__link js-scroll" href="#o-mne">O mně</a>
+          <a class="nav__link js-scroll" href="#proces">Jak to funguje</a>
+          <a class="nav__link js-scroll" href="#priklad-projektu">Příklad řešení</a>
+          <a class="btn btn--primary btn--sm js-scroll" href="#kontakt">Domluvit konzultaci</a>
         </nav>
 
         <button class="navToggle" type="button" aria-label="Otevřít menu" aria-expanded="false">
@@ -67,6 +66,21 @@
           </svg>
         </div>
         <div class="container hero__grid">
+          <div class="hero__media reveal">
+            <figure class="hero-visual">
+              <img
+                class="hero-visual__img"
+                src="images/fotka_realitaci.jpg"
+                width="1200"
+                height="1200"
+                alt="Profesionální tým realitních makléřů"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </figure>
+          </div>
+
           <div class="hero__copy reveal">
             <p class="kicker">Weby pro realitní makléře v Česku</p>
             <h1 class="h1">
@@ -81,44 +95,30 @@
               <a class="btn btn--primary js-scroll" href="#kontakt">Domluvit konzultaci</a>
             </div>
           </div>
-
-          <div class="hero__media reveal">
-            <figure class="portrait" aria-label="Fotka">
-              <img
-                class="portrait__img"
-                src="images/moje_fotka_2.png"
-                alt="Šimon Drápal - tvorba webů pro realitní makléře"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-          </div>
         </div>
       </section>
 
-      <section id="o-mne" class="section section--tight section--re">
-        <div class="re-sec re-sec--mural-tr" aria-hidden="true">
-          <svg class="re-sec__svg" viewBox="0 0 440 520" preserveAspectRatio="xMidYMid meet">
-            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.36">
-              <path d="M50 440V270l95-68 95 68V440H50z" />
-              <path d="M120 440V340h50V440" />
-              <rect x="165" y="300" width="36" height="28" rx="2" />
-              <path d="M255 440V320h85V440" />
-              <path d="M385 440V300" stroke-width="1.6" />
-              <circle cx="385" cy="252" r="58" stroke-width="1.6" opacity="0.48" />
-              <path d="M30 440h380" stroke-width="1.3" opacity="0.42" />
-              <path d="M72 440V418m40 22V418m40 22V418m40 22V418" stroke-width="1.2" opacity="0.38" />
-            </g>
-          </svg>
-        </div>
+      <section id="o-mne" class="section section--tight">
         <div class="container">
-          <div class="split">
+          <div class="split split--about">
             <div class="split__main reveal">
               <h2 class="h2">O mně</h2>
               <p class="p">Tvorbě webových stránek jsem se dříve věnoval napříč různými obory a klienty - od menších živnostníků až po firmy z různých segmentů. Postupem času jsem ale začal vnímat, že největší smysl mi dává práce s realitními makléři.</p>
               <p class="p">Právě v realitách totiž web není jen vizitka, ale nástroj, který může přímo ovlivňovat počet poptávek a nových klientů. Proto jsem se začal specializovat právě na tento obor.</p>
               <p class="p">Aktivně se v oblasti realitního marketingu dále vzdělávám a zároveň komunikuji s realitními makléři, abych lépe porozuměl jejich každodenní práci, potřebám a výzvám, se kterými se setkávají. Díky tomu dokážu tvořit weby, které nejsou jen vizuálně moderní, ale hlavně dávají smysl z pohledu získávání klientů.</p>
             </div>
+            <aside class="split__media reveal" aria-label="Fotografie">
+              <!-- Nahraď src vlastní cestou k souboru nebo URL obrázku -->
+              <figure class="about-photo">
+                <img
+                  class="about-photo__img"
+                  src="images/moje_fotka_4.png"
+                  alt="Šimon Drápal"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </aside>
           </div>
         </div>
       </section>
@@ -142,43 +142,55 @@
           <header class="section__header reveal">
             <h2 class="h2">Dělám věci trochu jinak</h2>
             <p class="p p--muted">
-              Nejprve zjistím, jak prodáváte teď a kam má web směřovat - pak uvidíte návrh na míru pro makléře.
-              Žádný nátlak: jde o to, jestli vám řešení sedí a přinese víc poptávek.
+              Nejdřív pochopím Vaši situaci, pak připravím návrh na míru a společně se rozhodneme, jestli dává smysl spolupráce.
             </p>
           </header>
 
           <div class="steps">
-            <article class="step reveal">
-              <div class="step__badge">1</div>
-              <h3 class="h3">Krátký videohovor (10–15 min)</h3>
-              <p class="p">
-                Probereme váš segment (byty, domy, investice…), odkud dnes berete klienty a co vám na webu
-                nejvíc chybí - víc kontaktů z Google, důvěra, showcase referencí, nebo jasná nabídka služeb.
-              </p>
-            </article>
+            <div class="steps__row">
+              <article class="step reveal">
+                <div class="step__badge">1</div>
+                <h3 class="h3">Krátký videohovor (10-15 min)</h3>
+                <p class="p">
+                  Společně projdeme, jak aktuálně fungujete, odkud získáváte klienty a jaké máte cíle. Zároveň zjistíme, jestli pro Vás dává webová stránka smysl a v čem Vám může reálně pomoci.
+                </p>
+              </article>
 
-            <article class="step reveal">
-              <div class="step__badge">2</div>
-              <h3 class="h3">Návrh na míru</h3>
-              <p class="p">
-                Dodám konkrétní koncept: struktura stránek, co na první pohled uvidí kupující nebo prodávající,
-                kam povede tlačítko nebo formulář. Uvidíte, jak by web tahal poptávky v praxi, ne jen „nějaký design“.
-              </p>
-            </article>
+              <article class="step reveal">
+                <div class="step__badge">2</div>
+                <h3 class="h3">Návrh na míru</h3>
+                <p class="p">
+                  Na základě úvodního videohovoru vytvořím návrh webové stránky přímo pro Vás. Díky tomu si dokážete lépe představit, jak by web mohl vypadat a jak Vám může reálně pomoci.
+                </p>
+              </article>
 
-            <article class="step reveal">
-              <div class="step__badge">3</div>
-              <h3 class="h3">Společné projití + rozhodnutí</h3>
-              <p class="p">
-                Projdete si návrh a odhad dopadu na vaše leady a image. Rozhodnutí je na vás - bez závazku
-                hned po prvním hovoru.
-              </p>
-            </article>
+              <article class="step reveal">
+                <div class="step__badge">3</div>
+                <h3 class="h3">Projití návrhu a rozhodnutí</h3>
+                <p class="p">
+                  Na dalším videohovoru si společně projdeme návrh a ukážeme si, jak může webová stránka pomoci právě Vám. Na základě toho se rozhodnete, jestli spolupráce dává smysl.
+                </p>
+              </article>
+            </div>
+
+            <div class="steps__row steps__row--pair">
+              <article class="step reveal">
+                <div class="step__badge">4</div>
+                <h3 class="h3">Realizace a úpravy</h3>
+                <p class="p">Web vytvořím a upravím podle Vaší zpětné vazby prostřednictvím videohovorů nebo písemně tak, aby odpovídal Vašim představám.</p>
+              </article>
+
+              <article class="step reveal">
+                <div class="step__badge">5</div>
+                <h3 class="h3">Spuštění a optimalizace</h3>
+                <p class="p">Zajistím spuštění webu, pomůžu s doménou i hostingem, nastavím základní SEO a v prvních 3 měsících sleduji jeho výkon a podle potřeby ho upravuji.</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="video" class="section section--tight section--re">
+      <section id="video" class="section section--tight section--re" hidden>
         <div class="container">
           <div class="re-sec re-sec--questions" aria-hidden="true">
             <svg class="re-sec__svg" viewBox="0 0 560 320" preserveAspectRatio="xMidYMid meet">
@@ -303,45 +315,116 @@
           <header class="section__header showcase__header reveal">
             <h2 id="priklad-projektu-heading" class="h2">Příklad projektu pro realitního makléře</h2>
             <p class="p p--muted showcase__lead">
-              Webová stránka vytvořená pro realitního makléře zaměřeného na získávání klientů a budování osobní značky.
-              Níže je stylizovaný náhled rozložení — u reálné spolupráce doplníme vaše texty, fotografie a konkrétní nabídku.
+              Konkrétní realizace:
+              <a
+                class="link"
+                href="http://martinkaresreality.cz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >martinkaresreality.cz</a
+              >
+              - případová studie webu pro realitního makléře, abyste měli jasnou představu, jak může spolupráce probíhat.
             </p>
           </header>
 
           <div class="showcase__grid">
             <div class="showcase__copy reveal">
-              <ul class="showcase__highlights">
-                <li>přehledná prezentace služeb realitního makléře (prodej, pronájem, ocenění) bez zbytečného chaosu</li>
-                <li>důraz na důvěru a první dojem — úvod, vaše hodnota a jasná nabídka ještě před scrollováním</li>
-                <li>jednoduchý a rychlý kontakt pro klienty: výrazné CTA, formulář a telefon na jedno kliknutí na mobilu</li>
-                <li>moderní vizuál a typografie v souladu s realitním trhem — čistý, klidný a profesionální dojem</li>
+              <h3 class="p showcase__goals-label">Cílem webu bylo:</h3>
+              <ul class="showcase__goal-list">
+                <li>přidat další způsob prezentace prodávaných nemovitostí přes vlastní webovou stránku</li>
+                <li>zvýšit důvěryhodnost realitního makléře u potenciálních klientů</li>
+                <li>profesionálně představit nabízené služby</li>
+                <li>jasně a srozumitelně vysvětlit postup spolupráce</li>
               </ul>
               <a class="btn btn--primary btn--lg js-scroll showcase__cta" href="#kontakt">Nezávazná konzultace</a>
             </div>
 
-            <figure class="showcase__mockup reveal">
-              <img
-                class="showcase__img"
-                src="images/priklad-projektu-makler.svg"
-                width="1200"
-                height="760"
-                alt="Náhled rozložení webové stránky pro realitního makléře — hero sekce, služby a kontaktní blok"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
+            <div class="showcase__preview-col reveal">
+              <div class="showcase__preview">
+                <iframe
+                  class="showcase__iframe"
+                  src="http://martinkaresreality.cz/"
+                  title="Živý náhled webu martinkaresreality.cz"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allow="fullscreen"
+                ></iframe>
+              </div>
+              <a
+                class="link showcase__open-tab"
+                href="http://martinkaresreality.cz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Otevřít martinkaresreality.cz na nové kartě</a
+              >
+            </div>
+          </div>
+
+          <div class="showcase__process reveal">
+            <h3 class="showcase__subhd showcase__subhd--process">Postup spolupráce</h3>
+            <ol class="showcase__timeline" aria-label="Postup spolupráce u projektu">
+              <li class="showcase__tstep">
+                <span class="showcase__tstep-num" aria-hidden="true">1</span>
+                <div class="showcase__tstep-body">
+                  <h4 class="showcase__tstep-title">Nezávazný videohovor a pochopení potřeb</h4>
+                </div>
+              </li>
+              <li class="showcase__tstep">
+                <span class="showcase__tstep-num" aria-hidden="true">2</span>
+                <div class="showcase__tstep-body">
+                  <h4 class="showcase__tstep-title">Vytvoření webového návrhu na míru</h4>
+                </div>
+              </li>
+              <li class="showcase__tstep">
+                <span class="showcase__tstep-num" aria-hidden="true">3</span>
+                <div class="showcase__tstep-body">
+                  <h4 class="showcase__tstep-title">Projití návrhu a uzavření spolupráce</h4>
+                </div>
+              </li>
+              <li class="showcase__tstep">
+                <span class="showcase__tstep-num" aria-hidden="true">4</span>
+                <div class="showcase__tstep-body">
+                  <h4 class="showcase__tstep-title">Realizace webu a finální úpravy</h4>
+                </div>
+              </li>
+              <li class="showcase__tstep">
+                <span class="showcase__tstep-num" aria-hidden="true">5</span>
+                <div class="showcase__tstep-body">
+                  <h4 class="showcase__tstep-title">Dokončení projektu, nasazení webu a SEO nastavení</h4>
+                </div>
+              </li>
+              <li class="showcase__tstep">
+                <span class="showcase__tstep-num" aria-hidden="true">6</span>
+                <div class="showcase__tstep-body">
+                  <h4 class="showcase__tstep-title">Sledování výkonu po dobu 3 měsíců</h4>
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
       </section>
 
-      <section id="kontakt" class="section section--tight">
+      <section id="kontakt" class="section section--tight section--re">
+        <div class="re-sec re-sec--mural-bl" aria-hidden="true">
+          <svg class="re-sec__svg" viewBox="0 0 440 520" preserveAspectRatio="xMidYMid meet">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.36">
+              <path d="M50 440V270l95-68 95 68V440H50z" />
+              <path d="M120 440V340h50V440" />
+              <rect x="165" y="300" width="36" height="28" rx="2" />
+              <path d="M255 440V320h85V440" />
+              <path d="M385 440V300" stroke-width="1.6" />
+              <circle cx="385" cy="252" r="58" stroke-width="1.6" opacity="0.48" />
+              <path d="M30 440h380" stroke-width="1.3" opacity="0.42" />
+              <path d="M72 440V418m40 22V418m40 22V418m40 22V418" stroke-width="1.2" opacity="0.38" />
+            </g>
+          </svg>
+        </div>
         <div class="container">
           <div class="contact">
             <div class="contact__copy reveal">
-              <h2 class="h2">Chcete víc poptávek z vlastního webu?</h2>
+              <h2 class="h2">Domluvme si nezávazný videohovor</h2>
               <p class="p">
-                Vyplňte formulář - ozvu se do <strong>24 hodin</strong>. Probereme, odkud dnes berete klienty, co vám na webu chybí
-                a jestli řešení dává smysl pro váš styl prodeje. Konzultace je nezávazná.
+                Vyplňte formulář a já se Vám ozvu. Společně zjistíme, jak může web pomoci Vašemu realitnímu podnikání a jestli pro Vás dává smysl jako způsob získávání nových klientů.
               </p>
 
               <div class="pillRow" aria-label="Rychlé info">
@@ -384,13 +467,13 @@
                 </div>
 
                 <div class="field">
-                  <label for="about">Vaše praxe a cíl webu</label>
+                  <label for="about">Vaše realitní činnost a co očekáváte od webu</label>
                   <textarea
                     id="about"
                     name="about"
                     rows="5"
                     required
-                    placeholder="Kde působíte (město/region), co prodáváte nejčastěji, odkud máte klienty dnes (Sreality, sociální sítě, doporučení) a co chcete od webu nejvíc - víc hovorů, formulářů, rezervací…"
+                    placeholder="Jak aktuálně získáváte klienty? Co by měl web zlepšit (důvěra, poptávky, prezentace nemovitostí apod.)? Klidně napište cokoliv, co považujete za podstatné - stačí volná forma."
                   ></textarea>
                   <p class="field__error" aria-live="polite"></p>
                 </div>
@@ -428,23 +511,50 @@
     </main>
 
     <footer class="footer">
-      <div class="container footer__inner">
-        <div class="footer__left">
-          <p class="footer__brand">Šimon Drápal</p>
-          <p class="footer__meta">
-            <a class="footer__link" href="mailto:simondrapal9@gmail.com">simondrapal9@gmail.com</a>
-            <span class="footer__sep" aria-hidden="true">•</span>
-            <a class="footer__link" href="tel:+420774564728">+420 774 564 728</a>
-          </p>
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__col--about">
+            <p class="footer__tagline">
+              Weby pro realitní makléře v Česku. Pomáhám makléřům získávat více poptávek a budovat důvěru pomocí
+              webových stránek.
+            </p>
+          </div>
+
+          <div class="footer__col footer__col--contact">
+            <h2 class="footer__heading">Kontakt</h2>
+            <dl class="footer__contact">
+              <div class="footer__contact-row">
+                <dt>Jméno</dt>
+                <dd>Šimon Drápal</dd>
+              </div>
+              <div class="footer__contact-row">
+                <dt>E-mail</dt>
+                <dd>
+                  <a class="footer__link" href="mailto:simondrapal9@gmail.com">simondrapal9@gmail.com</a>
+                </dd>
+              </div>
+              <div class="footer__contact-row">
+                <dt>Telefon</dt>
+                <dd>
+                  <a class="footer__link" href="tel:+420774564728">+420 774 564 728</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <nav class="footer__col footer__col--nav" aria-label="Navigace v patičce">
+            <h2 class="footer__heading">Navigace</h2>
+            <ul class="footer__nav">
+              <li><a class="footer__nav-link js-scroll" href="#top">Úvod</a></li>
+              <li><a class="footer__nav-link js-scroll" href="#o-mne">O mně</a></li>
+              <li><a class="footer__nav-link js-scroll" href="#proces">Jak to funguje</a></li>
+              <li><a class="footer__nav-link js-scroll" href="#priklad-projektu">Příklad řešení</a></li>
+              <li><a class="footer__nav-link js-scroll" href="#kontakt">Kontakt</a></li>
+            </ul>
+          </nav>
         </div>
 
-        <div class="footer__right">
-          <p class="footer__copy">
-            © <span id="year"></span> Šimon Drápal
-            <span class="footer__sep" aria-hidden="true">•</span>
-            Všechna práva vyhrazena
-          </p>
-        </div>
+        <p class="footer__copyright">© 2026 Šimon Drápal - Všechna práva vyhrazena</p>
       </div>
     </footer>
 
