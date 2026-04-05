@@ -1,6 +1,36 @@
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+const EMAILJS_PUBLIC_KEY = "53BraLtdA9dtrb9xA";
+const EMAILJS_SERVICE_ID = "service_fyy1p0g";
+const EMAILJS_TEMPLATE_ID = "template_pgil9a2";
+
+let emailjsInitialized = false;
+
+function initEmailjs() {
+  if (emailjsInitialized || typeof emailjs === "undefined") {
+    return Boolean(emailjsInitialized);
+  }
+  if (!EMAILJS_PUBLIC_KEY) {
+    return false;
+  }
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  emailjsInitialized = true;
+  return true;
+}
+
+/** Hodnoty pro šablonu EmailJS (názvy polí musí odpovídat {{…}} v šabloně). */
+function getEmailjsTemplateParams(form) {
+  return {
+    name: ($("#firstName", form)?.value || "").trim(),
+    surname: ($("#lastName", form)?.value || "").trim(),
+    email: ($("#email", form)?.value || "").trim(),
+    phone: ($("#phone", form)?.value || "").trim(),
+    web: ($("#website", form)?.value || "").trim(),
+    message: ($("#about", form)?.value || "").trim(),
+  };
+}
+
 function prefersReducedMotion() {
   return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
@@ -190,7 +220,7 @@ function validate(form) {
 
   req(firstName, "jméno");
   req(lastName, "příjmení");
-  req(about, "informace o podnikání");
+  req(about, "popis vaší realitní činnosti a očekávání od webu");
 
   if (website && website.value.trim()) {
     try {
@@ -212,6 +242,8 @@ function setupForm() {
   const form = $("#contactForm");
   if (!form) return;
   const success = $(".form__success", form);
+  const sendError = $(".form__send-error", form);
+  let submitting = false;
 
   const clearOnInput = (e) => {
     const el = e.target;
@@ -223,16 +255,51 @@ function setupForm() {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    if (success) success.hidden = true;
 
-    const ok = validate(form);
-    if (!ok) {
+    if (submitting) {
+      return;
+    }
+
+    if (success) success.hidden = true;
+    if (sendError) {
+      sendError.hidden = true;
+      sendError.textContent = "";
+    }
+
+    if (!validate(form)) {
       const firstInvalid = $(".field--invalid input, .field--invalid textarea", form);
       if (firstInvalid) firstInvalid.focus();
       return;
     }
 
-    // Simulace odeslání (bez backendu)
+    if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
+      if (sendError) {
+        sendError.textContent =
+          "Odeslání e‑mailu není nastavené. V souboru script.js doplňte EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID a EMAILJS_TEMPLATE_ID.";
+        sendError.hidden = false;
+      }
+      return;
+    }
+
+    if (typeof emailjs === "undefined") {
+      if (sendError) {
+        sendError.textContent =
+          "Knihovna EmailJS se nenačetla. Zkontrolujte připojení k internetu a obnovte stránku.";
+        sendError.hidden = false;
+      }
+      return;
+    }
+
+    if (!initEmailjs()) {
+      if (sendError) {
+        sendError.textContent = "EmailJS se nepodařilo inicializovat. Zkontrolujte veřejný klíč.";
+        sendError.hidden = false;
+      }
+      return;
+    }
+
+    submitting = true;
+
     const submitBtn = $("button[type=\"submit\"]", form);
     const old = submitBtn?.textContent;
     if (submitBtn) {
@@ -240,17 +307,31 @@ function setupForm() {
       submitBtn.textContent = "Odesílám…";
     }
 
-    await new Promise((r) => setTimeout(r, prefersReducedMotion() ? 0 : 650));
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, getEmailjsTemplateParams(form));
 
-    if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.textContent = old || "Domluvit konzultaci";
-    }
+      if (typeof window.trackSiteEvent === "function") {
+        window.trackSiteEvent("contact_form_submit");
+      }
 
-    form.reset();
-    if (success) {
-      success.hidden = false;
-      success.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "nearest" });
+      form.reset();
+      if (success) {
+        success.hidden = false;
+        success.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "nearest" });
+      }
+    } catch (err) {
+      console.error(err);
+      if (sendError) {
+        sendError.textContent =
+          "Odeslání se nepovedlo. Zkuste to prosím znovu za chvíli, nebo napište přímo na e‑mail.";
+        sendError.hidden = false;
+      }
+    } finally {
+      submitting = false;
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = old || "Domluvit konzultaci";
+      }
     }
   });
 }
@@ -260,4 +341,3 @@ setupSmoothScroll();
 setupMobileNav();
 setupReveal();
 setupForm();
-

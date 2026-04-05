@@ -19,7 +19,8 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="data:," />
+    <link rel="icon" type="image/png" href="images/simondrapal_logo_cerne_bez.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="images/simondrapal_logo_cerne_bez.png" />
   </head>
   <body>
     <a class="skip" href="#obsah">Přeskočit na obsah</a>
@@ -27,7 +28,15 @@
     <header class="header" role="banner">
       <div class="container header__inner">
         <a class="brand" href="#top" aria-label="Šimon Drápal - weby pro realitní makléře">
-          <span class="brand__dot" aria-hidden="true"></span>
+          <img
+            class="brand__logo"
+            src="images/simondrapal_logo_bile_bez.png"
+            alt=""
+            width="32"
+            height="32"
+            decoding="async"
+            aria-hidden="true"
+          />
           <span class="brand__name">Šimon Drápal</span>
         </a>
 
@@ -491,6 +500,8 @@
                   <p class="field__error" aria-live="polite"></p>
                 </div>
 
+                <p class="form__send-error" role="alert" aria-live="assertive" hidden></p>
+
                 <div class="form__actions">
                   <button class="btn btn--primary btn--block" type="submit">
                     Domluvit konzultaci
@@ -558,6 +569,8 @@
       </div>
     </footer>
 
+    <script src="analytics.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
     <script src="script.js" defer></script>
   </body>
 </html>
