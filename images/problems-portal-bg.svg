@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="ppbFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141c2e"/>
+      <stop offset="100%" stop-color="#0a101c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#ppbFill)"/>
+  <!-- Horní toolbar / vyhledávání -->
+  <rect x="48" y="36" width="420" height="28" rx="6" fill="#1e2a42" opacity="0.95"/>
+  <rect x="488" y="40" width="200" height="20" rx="4" fill="#263652" opacity="0.85"/>
+  <rect x="700" y="40" width="120" height="20" rx="4" fill="#263652" opacity="0.65"/>
+  <rect x="1320" y="38" width="232" height="24" rx="5" fill="#1a2740" opacity="0.9"/>
+  <!-- Xádky karet  hustaí mYí~ka jako výsledky vyhledávání -->
+  <g opacity="0.88">
+    <rect x="48" y="104" width="360" height="200" rx="10" fill="#1c263c" stroke="#2a3a58" stroke-width="1"/>
+    <rect x="72" y="128" width="312" height="96" rx="6" fill="#24324c"/>
+    <rect x="72" y="240" width="140" height="14" rx="3" fill="#2d3f5c"/>
+    <rect x="220" y="240" width="100" height="14" rx="3" fill="#25344c"/>
+    <rect x="72" y="268" width="200" height="10" rx="2" fill="#1f2d44"/>
+    <rect x="72" y="286" width="160" height="10" rx="2" fill="#1a283c"/>
+    <rect x="432" y="104" width="360" height="200" rx="10" fill="#1a2438" stroke="#2a3a58" stroke-width="1"/>
+    <rect x="456" y="128" width="312" height="96" rx="6" fill="#222e48"/>
+    <rect x="456" y="240" width="120" height="14" rx="3" fill="#2d3f5c"/>
+    <rect x="816" y="104" width="360" height="200" rx="10" fill="#1c263c" stroke="#2a3a58" stroke-width="1"/>
+    <rect x="840" y="128" width="312" height="96" rx="6" fill="#24324c"/>
+    <rect x="1200" y="104" width="352" height="200" rx="10" fill="#182234" stroke="#283656" stroke-width="1"/>
+    <rect x="1224" y="128" width="304" height="96" rx="6" fill="#202c44"/>
+  </g>
+  <g opacity="0.75">
+    <rect x="48" y="332" width="360" height="200" rx="10" fill="#1a2438" stroke="#283656" stroke-width="1"/>
+    <rect x="72" y="356" width="312" height="96" rx="6" fill="#222e48"/>
+    <rect x="432" y="332" width="360" height="200" rx="10" fill="#1c263c" stroke="#2a3a58" stroke-width="1"/>
+    <rect x="456" y="356" width="312" height="96" rx="6" fill="#24324c"/>
+    <rect x="816" y="332" width="360" height="200" rx="10" fill="#182234" stroke="#283656" stroke-width="1"/>
+    <rect x="840" y="356" width="312" height="96" rx="6" fill="#202c44"/>
+    <rect x="1200" y="332" width="352" height="200" rx="10" fill="#1c263c" stroke="#2a3a58" stroke-width="1"/>
+    <rect x="1224" y="356" width="304" height="96" rx="6" fill="#24324c"/>
+  </g>
+  <g opacity="0.62">
+    <rect x="48" y="560" width="360" height="200" rx="10" fill="#161f32" stroke="#263652" stroke-width="1"/>
+    <rect x="432" y="560" width="360" height="200" rx="10" fill="#1a2438" stroke="#283656" stroke-width="1"/>
+    <rect x="816" y="560" width="360" height="200" rx="10" fill="#161f32" stroke="#263652" stroke-width="1"/>
+    <rect x="1200" y="560" width="352" height="200" rx="10" fill="#182234" stroke="#283656" stroke-width="1"/>
+  </g>
+  <g opacity="0.45">
+    <rect x="48" y="788" width="360" height="180" rx="10" fill="#141c2e" stroke="#24324c" stroke-width="1"/>
+    <rect x="432" y="788" width="360" height="180" rx="10" fill="#141c2e" stroke="#24324c" stroke-width="1"/>
+    <rect x="816" y="788" width="360" height="180" rx="10" fill="#141c2e" stroke="#24324c" stroke-width="1"/>
+    <rect x="1200" y="788" width="352" height="180" rx="10" fill="#141c2e" stroke="#24324c" stroke-width="1"/>
+  </g>
+  <!-- Vertikální oddlovae sloupco -->
+  <g stroke="#2b3c5c" stroke-width="1" opacity="0.35">
+    <line x1="424" y1="96" x2="424" y2="980"/>
+    <line x1="808" y1="96" x2="808" y2="980"/>
+    <line x1="1192" y1="96" x2="1192" y2="980"/>
+  </g>
+</svg>

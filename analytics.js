@@ -5,7 +5,7 @@
  *
  * Měřené události (stejné jako dřív u Firebase):
  * - contact_form_submit … úspěšné odeslání kontaktního formuláře
- * - cta_consult_click … parametr cta_placement: nav | hero | showcase
+ * - cta_consult_click … parametr cta_placement: nav | hero | problems | showcase
  * - phone_click … link_area: footer | other
  * - email_click … link_area: footer | other
  * - case_study_realtor_click … link_variant: lead_inline | open_new_tab | other
@@ -52,6 +52,7 @@ window.trackSiteEvent = trackSiteEvent;
 function hrefToNavTarget(href) {
   const map = {
     "#top": "uvod",
+    "#problemy": "problemy",
     "#o-mne": "o_mne",
     "#proces": "jak_funguje",
     "#priklad-projektu": "priklad_reseni",
@@ -106,6 +107,10 @@ function setupClickAnalytics() {
         }
         if (a.closest(".hero__cta")) {
           trackSiteEvent("cta_consult_click", { cta_placement: "hero" });
+          return;
+        }
+        if (a.closest(".problems-band")) {
+          trackSiteEvent("cta_consult_click", { cta_placement: "problems" });
           return;
         }
         if (a.classList.contains("showcase__cta")) {

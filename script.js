@@ -60,8 +60,8 @@ function setupSmoothScroll() {
   }
 }
 
-/** Pořadí sekcí odpovídá kotvám v navigaci (sekce mimo nav se přiřadí k poslední „překročené“). */
-const NAV_SECTION_IDS = ["top", "o-mne", "proces", "priklad-projektu", "kontakt"];
+/** Pořadí sekcí = pořadí v dokumentu shora dolů (kotvy z navigace; sekce mimo nav se přiřadí k poslední „překročené“). */
+const NAV_SECTION_IDS = ["top", "problemy", "proces", "priklad-projektu", "o-mne", "kontakt"];
 
 let updateNavCurrentSection = () => {};
 

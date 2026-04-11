@@ -42,10 +42,11 @@
 
         <nav class="nav" aria-label="Navigace">
           <a class="nav__link js-scroll" href="#top">Úvod</a>
-          <a class="nav__link js-scroll" href="#o-mne">O mně</a>
-          <a class="nav__link js-scroll" href="#proces">Jak to funguje</a>
+          <a class="nav__link js-scroll" href="#problemy">Co Vás brzdí</a>
+          <a class="nav__link js-scroll" href="#proces">Jak to funguje?</a>
           <a class="nav__link js-scroll" href="#priklad-projektu">Příklad řešení</a>
-          <a class="btn btn--primary btn--sm js-scroll" href="#kontakt">Domluvit konzultaci</a>
+          <a class="nav__link js-scroll" href="#o-mne">O mně</a>
+          <a class="btn btn--primary btn--sm js-scroll" href="#kontakt">Domluvit videohovor</a>
         </nav>
 
         <button class="navToggle" type="button" aria-label="Otevřít menu" aria-expanded="false">
@@ -95,44 +96,42 @@
           <div class="hero__copy reveal">
             <p class="kicker">Weby pro realitní makléře v Česku</p>
             <h1 class="h1">
-              Webová stránka pro realitní makléře,<br />
-              <span class="h1__muted">která přináší klienty.</span>
+              Získávejte více klientů jako realitní makléř<br />
+              <span class="h1__muted">díky vlastnímu webu</span>
             </h1>
             <p class="lead">
-              Webová stránka pro realitní makléře, která Vám pomůže být vidět, působit důvěryhodně a získávat klienty i mimo realitní portály.
+              Web, který buduje důvěru a přivádí nové klienty mimo realitní portály
             </p>
 
             <div class="hero__cta">
-              <a class="btn btn--primary js-scroll" href="#kontakt">Domluvit konzultaci</a>
+              <div class="hero__cta-stack">
+                <a class="btn btn--primary js-scroll" href="#kontakt">Zjistit, jestli mi web dává smysl</a>
+                <a class="link hero__how-link js-scroll" href="#proces">Jak to funguje?</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="o-mne" class="section section--tight">
+      <div id="problemy" class="problems-band" role="region" aria-labelledby="problem-awareness-heading">
         <div class="container">
-          <div class="split split--about">
-            <div class="split__main reveal">
-              <h2 class="h2">O mně</h2>
-              <p class="p">Tvorbě webových stránek jsem se dříve věnoval napříč různými obory a klienty - od menších živnostníků až po firmy z různých segmentů. Postupem času jsem ale začal vnímat, že největší smysl mi dává práce s realitními makléři.</p>
-              <p class="p">Právě v realitách totiž web není jen vizitka, ale nástroj, který může přímo ovlivňovat počet poptávek a nových klientů. Proto jsem se začal specializovat právě na tento obor.</p>
-              <p class="p">Aktivně se v oblasti realitního marketingu dále vzdělávám a zároveň komunikuji s realitními makléři, abych lépe porozuměl jejich každodenní práci, potřebám a výzvám, se kterými se setkávají. Díky tomu dokážu tvořit weby, které nejsou jen vizuálně moderní, ale hlavně dávají smysl z pohledu získávání klientů.</p>
-            </div>
-            <aside class="split__media reveal" aria-label="Fotografie">
-              <!-- Nahraď src vlastní cestou k souboru nebo URL obrázku -->
-              <figure class="about-photo">
-                <img
-                  class="about-photo__img"
-                  src="images/moje_fotka_4.webp"
-                  alt="Šimon Drápal"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-            </aside>
+          <div class="problems-band__inner">
+            <h2 id="problem-awareness-heading" class="problems-band__title reveal">
+              Tohle brzdí většinu realitních makléřů víc, než si myslí
+            </h2>
+            <p class="problems-band__intro reveal">
+              Většina makléřů to řeší, jen o tom nemluví.
+            </p>
+            <ul class="problems-band__list reveal">
+              <li>Na realitních portálech zapadáte mezi desítky dalších makléřů bez výrazného rozdílu</li>
+              <li>Lidé si o Vás nemají kde udělat jasný obrázek, než Vás kontaktují</li>
+              <li>Přicházíte o klienty, kteří si Vás chtějí nejdřív ověřit online, ale nemají kde</li>
+              <li>Vaše značka stojí jen na aktivitě na sociálních sítích - když nepřidáváte, přestáváte být vidět</li>
+              <li>Nemáte jedno místo, kde máte plně pod kontrolou svou prezentaci a první dojem</li>
+            </ul>
           </div>
         </div>
-      </section>
+      </div>
 
       <section id="proces" class="section section--re">
         <div class="re-sec re-sec--skyline" aria-hidden="true">
@@ -171,7 +170,7 @@
                 <div class="step__badge">2</div>
                 <h3 class="h3">Návrh na míru</h3>
                 <p class="p">
-                  Na základě úvodního videohovoru vytvořím návrh webové stránky přímo pro Vás. Díky tomu si dokážete lépe představit, jak by web mohl vypadat a jak Vám může reálně pomoci.
+                  Na základě úvodního videohovoru vytvořím nezávazný návrh webu na míru. Díky tomu si dokážete lépe představit, jak by web mohl vypadat a jak Vám může reálně pomoci.
                 </p>
               </article>
 
@@ -347,7 +346,7 @@
                 <li>profesionálně představit nabízené služby</li>
                 <li>jasně a srozumitelně vysvětlit postup spolupráce</li>
               </ul>
-              <a class="btn btn--primary btn--lg js-scroll showcase__cta" href="#kontakt">Nezávazná konzultace</a>
+              <a class="btn btn--primary btn--lg js-scroll showcase__cta" href="#kontakt">Nezávazný videohovor</a>
             </div>
 
             <div class="showcase__preview-col reveal">
@@ -421,6 +420,31 @@
         </div>
       </section>
 
+      <section id="o-mne" class="section section--tight">
+        <div class="container">
+          <div class="split split--about">
+            <div class="split__main reveal">
+              <h2 class="h2">O mně</h2>
+              <p class="p">Tvorbě webových stránek jsem se dříve věnoval napříč různými obory a klienty - od menších živnostníků až po firmy z různých segmentů. Postupem času jsem ale začal vnímat, že největší smysl mi dává práce s realitními makléři.</p>
+              <p class="p">Právě v realitách totiž web není jen vizitka, ale nástroj, který může přímo ovlivňovat počet poptávek a nových klientů. Proto jsem se začal specializovat právě na tento obor.</p>
+              <p class="p">Aktivně se v oblasti realitního marketingu dále vzdělávám a zároveň komunikuji s realitními makléři, abych lépe porozuměl jejich každodenní práci, potřebám a výzvám, se kterými se setkávají. Díky tomu dokážu tvořit weby, které nejsou jen vizuálně moderní, ale hlavně dávají smysl z pohledu získávání klientů.</p>
+            </div>
+            <aside class="split__media reveal" aria-label="Fotografie">
+              <!-- Nahraď src vlastní cestou k souboru nebo URL obrázku -->
+              <figure class="about-photo">
+                <img
+                  class="about-photo__img"
+                  src="images/moje_fotka_4.webp"
+                  alt="Šimon Drápal"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </aside>
+          </div>
+        </div>
+      </section>
+
       <section id="kontakt" class="section section--tight section--re">
         <div class="re-sec re-sec--mural-bl" aria-hidden="true">
           <svg class="re-sec__svg" viewBox="0 0 440 520" preserveAspectRatio="xMidYMid meet">
@@ -441,7 +465,7 @@
             <div class="contact__copy reveal">
               <h2 class="h2">Domluvme si nezávazný videohovor</h2>
               <p class="p">
-                Vyplňte formulář a já se Vám ozvu. Společně zjistíme, jak může web pomoci Vašemu realitnímu podnikání a jestli pro Vás dává smysl jako způsob získávání nových klientů.
+                Vyplňte formulář a já se vám ozvu. Společně zjistíme, jestli pro vás web dává smysl a může vám přivést více klientů.
               </p>
 
               <div class="pillRow" aria-label="Rychlé info">
@@ -484,13 +508,13 @@
                 </div>
 
                 <div class="field">
-                  <label for="about">Vaše realitní činnost a co očekáváte od webu</label>
+                  <label for="about">Vaše situace (stručně)</label>
                   <textarea
                     id="about"
                     name="about"
                     rows="5"
                     required
-                    placeholder="Jak aktuálně získáváte klienty? Co by měl web zlepšit (důvěra, poptávky, prezentace nemovitostí apod.)? Klidně napište cokoliv, co považujete za podstatné - stačí volná forma."
+                    placeholder="Stačí pár vět o vaší situaci"
                   ></textarea>
                   <p class="field__error" aria-live="polite"></p>
                 </div>
@@ -512,7 +536,7 @@
 
                 <div class="form__actions">
                   <button class="btn btn--primary btn--block" type="submit">
-                    Domluvit konzultaci
+                    Odeslat a domluvit videohovor
                   </button>
                   <p class="form__note">
                     Bez spamu. Údaje použiju jen na odpověď a domluvu krátké konzultace ohledně vašeho makléřského webu.
@@ -565,8 +589,9 @@
             <h2 class="footer__heading">Navigace</h2>
             <ul class="footer__nav">
               <li><a class="footer__nav-link js-scroll" href="#top">Úvod</a></li>
+              <li><a class="footer__nav-link js-scroll" href="#problemy">Problémy</a></li>
               <li><a class="footer__nav-link js-scroll" href="#o-mne">O mně</a></li>
-              <li><a class="footer__nav-link js-scroll" href="#proces">Jak to funguje</a></li>
+              <li><a class="footer__nav-link js-scroll" href="#proces">Jak to funguje?</a></li>
               <li><a class="footer__nav-link js-scroll" href="#priklad-projektu">Příklad řešení</a></li>
               <li><a class="footer__nav-link js-scroll" href="#kontakt">Kontakt</a></li>
             </ul>
