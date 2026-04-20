@@ -11,7 +11,8 @@
  * - case_study_realtor_click … link_variant: lead_inline | open_new_tab | other
  * - nav_link_click … nav_area: header | footer, nav_target: uvod | o_mne | …
  */
-const GA_MEASUREMENT_ID = "G-74TL5J8T6V";
+const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+let gaInitialized = false;
 
 window.dataLayer = window.dataLayer || [];
 function gtag() {
@@ -19,9 +20,10 @@ function gtag() {
 }
 
 function initGoogleAnalytics() {
-  if (!GA_MEASUREMENT_ID) {
+  if (!GA_MEASUREMENT_ID || gaInitialized) {
     return;
   }
+  gaInitialized = true;
   gtag("js", new Date());
   gtag("config", GA_MEASUREMENT_ID);
 
@@ -37,7 +39,7 @@ function initGoogleAnalytics() {
  * @param {Record<string, string|number|boolean>} [params]
  */
 function trackSiteEvent(name, params) {
-  if (!GA_MEASUREMENT_ID) {
+  if (!GA_MEASUREMENT_ID || !gaInitialized) {
     return;
   }
   try {
@@ -48,6 +50,7 @@ function trackSiteEvent(name, params) {
 }
 
 window.trackSiteEvent = trackSiteEvent;
+window.loadGoogleAnalytics = initGoogleAnalytics;
 
 function hrefToNavTarget(href) {
   const map = {
@@ -137,8 +140,6 @@ function setupClickAnalytics() {
     true
   );
 }
-
-initGoogleAnalytics();
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", setupClickAnalytics);
