@@ -7,7 +7,7 @@
     <title>Šimon Drápal - Web pro realitní makléře, který přivádí zájemce o nemovitosti</title>
     <meta
       name="description"
-      content="Web na míru pro realitní makléře: víc poptávek, silnější osobní značka a méně závislosti jen na portálech a sociálních sítích. Krátký videohovor, návrh na míru, rozhodnutí bez tlaku."
+      content="Web na míru pro realitní makléře: víc poptávek, silnější osobní značka a méně závislosti jen na portálech a sociálních sítích. Krátká konzultace, návrh na míru, rozhodnutí bez tlaku."
     />
 
     <meta property="og:type" content="website" />
@@ -30,7 +30,7 @@
         <a class="brand" href="#top" aria-label="Šimon Drápal - weby pro realitní makléře">
           <img
             class="brand__logo"
-            src="images/simondrapal_logo_bile_bez.png"
+            src="images/simondrapal_logo_cerne_bez.png"
             alt=""
             width="32"
             height="32"
@@ -46,7 +46,7 @@
           <a class="nav__link js-scroll" href="#proces">Jak to funguje?</a>
           <a class="nav__link js-scroll" href="#priklad-projektu">Příklad řešení</a>
           <a class="nav__link js-scroll" href="#o-mne">O mně</a>
-          <a class="btn btn--primary btn--sm js-scroll" href="#kontakt">Domluvit videohovor</a>
+          <a class="btn btn--primary btn--sm js-scroll" href="#kontakt">Domluvit konzultaci</a>
         </nav>
 
         <button class="navToggle" type="button" aria-label="Otevřít menu" aria-expanded="false">
@@ -160,7 +160,7 @@
             <div class="steps__row">
               <article class="step reveal">
                 <div class="step__badge">1</div>
-                <h3 class="h3">Krátký videohovor (10-15 min)</h3>
+                <h3 class="h3">Krátká konzultace (10-15 min)</h3>
                 <p class="p">
                   Společně projdeme, jak aktuálně fungujete, odkud získáváte klienty a jaké máte cíle. Zároveň zjistíme, jestli pro Vás dává webová stránka smysl a v čem Vám může reálně pomoci.
                 </p>
@@ -170,7 +170,7 @@
                 <div class="step__badge">2</div>
                 <h3 class="h3">Návrh na míru</h3>
                 <p class="p">
-                  Na základě úvodního videohovoru vytvořím nezávazný návrh webu na míru. Díky tomu si dokážete lépe představit, jak by web mohl vypadat a jak Vám může reálně pomoci.
+                  Na základě úvodní konzultace vytvořím nezávazný návrh webu na míru. Díky tomu si dokážete lépe představit, jak by web mohl vypadat a jak Vám může reálně pomoci.
                 </p>
               </article>
 
@@ -346,7 +346,7 @@
                 <li>profesionálně představit nabízené služby</li>
                 <li>jasně a srozumitelně vysvětlit postup spolupráce</li>
               </ul>
-              <a class="btn btn--primary btn--lg js-scroll showcase__cta" href="#kontakt">Nezávazný videohovor</a>
+              <a class="btn btn--primary btn--lg js-scroll showcase__cta" href="#kontakt">Nezávazná konzultace</a>
             </div>
 
             <div class="showcase__preview-col reveal">
@@ -381,7 +381,7 @@
               <li class="showcase__tstep">
                 <span class="showcase__tstep-num" aria-hidden="true">1</span>
                 <div class="showcase__tstep-body">
-                  <h4 class="showcase__tstep-title">Nezávazný videohovor a pochopení potřeb</h4>
+                  <h4 class="showcase__tstep-title">Nezávazná konzultace a pochopení potřeb</h4>
                 </div>
               </li>
               <li class="showcase__tstep">
@@ -446,24 +446,10 @@
       </section>
 
       <section id="kontakt" class="section section--tight section--re">
-        <div class="re-sec re-sec--mural-bl" aria-hidden="true">
-          <svg class="re-sec__svg" viewBox="0 0 440 520" preserveAspectRatio="xMidYMid meet">
-            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.36">
-              <path d="M50 440V270l95-68 95 68V440H50z" />
-              <path d="M120 440V340h50V440" />
-              <rect x="165" y="300" width="36" height="28" rx="2" />
-              <path d="M255 440V320h85V440" />
-              <path d="M385 440V300" stroke-width="1.6" />
-              <circle cx="385" cy="252" r="58" stroke-width="1.6" opacity="0.48" />
-              <path d="M30 440h380" stroke-width="1.3" opacity="0.42" />
-              <path d="M72 440V418m40 22V418m40 22V418m40 22V418" stroke-width="1.2" opacity="0.38" />
-            </g>
-          </svg>
-        </div>
         <div class="container">
           <div class="contact">
             <div class="contact__copy reveal">
-              <h2 class="h2">Domluvme si nezávazný videohovor</h2>
+              <h2 class="h2">Domluvme si nezávaznou konzultaci</h2>
               <p class="p">
                 Vyplňte formulář a já se vám ozvu. Společně zjistíme, jestli pro vás web dává smysl a může vám přivést více klientů.
               </p>
@@ -478,12 +464,24 @@
                 <div class="form__row">
                   <div class="field">
                     <label for="firstName">Jméno</label>
-                    <input id="firstName" name="firstName" autocomplete="given-name" required />
+                    <input
+                      id="firstName"
+                      name="firstName"
+                      autocomplete="given-name"
+                      required
+                      placeholder="Jan"
+                    />
                     <p class="field__error" aria-live="polite"></p>
                   </div>
                   <div class="field">
                     <label for="lastName">Příjmení</label>
-                    <input id="lastName" name="lastName" autocomplete="family-name" required />
+                    <input
+                      id="lastName"
+                      name="lastName"
+                      autocomplete="family-name"
+                      required
+                      placeholder="Novák"
+                    />
                     <p class="field__error" aria-live="polite"></p>
                   </div>
                 </div>
@@ -497,12 +495,20 @@
                       inputmode="tel"
                       autocomplete="tel"
                       required
+                      placeholder="+420 777 123 456"
                     />
                     <p class="field__error" aria-live="polite"></p>
                   </div>
                   <div class="field">
                     <label for="email">E‑mail</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required />
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      required
+                      placeholder="jan.novak@email.cz"
+                    />
                     <p class="field__error" aria-live="polite"></p>
                   </div>
                 </div>
@@ -536,7 +542,7 @@
 
                 <div class="form__actions">
                   <button class="btn btn--primary btn--block" type="submit">
-                    Odeslat a domluvit videohovor
+                    Požádat o konzultaci
                   </button>
                   <p class="form__note">
                     Bez spamu. Údaje použiju jen na odpověď a domluvu krátké konzultace ohledně vašeho makléřského webu.

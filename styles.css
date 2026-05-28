@@ -1,15 +1,15 @@
 :root {
-  --bg: #070b16;
-  --panel: rgba(255, 255, 255, 0.06);
-  --panel2: rgba(255, 255, 255, 0.085);
-  --stroke: rgba(255, 255, 255, 0.12);
-  --text: rgba(255, 255, 255, 0.92);
-  --muted: rgba(255, 255, 255, 0.68);
-  --muted2: rgba(255, 255, 255, 0.52);
+  --bg: #ffffff;
+  --panel: rgba(255, 255, 255, 0.92);
+  --panel2: rgba(255, 255, 255, 0.82);
+  --stroke: rgba(15, 23, 42, 0.10);
+  --text: rgba(15, 23, 42, 0.92);
+  --muted: rgba(15, 23, 42, 0.72);
+  --muted2: rgba(15, 23, 42, 0.56);
 
-  --accent: #2b7fff;
-  --accent2: #22d3ee;
-  --shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+  --accent: #2563eb;
+  --accent2: #0ea5e9;
+  --shadow: 0 18px 60px rgba(15, 23, 42, 0.12);
   --radius: 18px;
   --radius2: 24px;
 
@@ -40,7 +40,7 @@ body {
   padding-top: var(--header-h);
   background-color: var(--bg);
   /* Základní pozadí (jednotné). Sekce mají vlastní panely níž. */
-  background-image: linear-gradient(180deg, #060a14 0%, var(--bg) 62%, #050813 100%);
+  background-image: linear-gradient(180deg, #ffffff 0%, #fbfcff 55%, #ffffff 100%);
   overflow-x: hidden;
 }
 
@@ -76,22 +76,17 @@ main > .section::before {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(255, 255, 255, 0.02);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.86);
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
 }
 
 main > .section:nth-of-type(even)::before {
-  background:
-    radial-gradient(900px circle at 15% 15%, rgba(43, 127, 255, 0.10), rgba(43, 127, 255, 0) 62%),
-    radial-gradient(700px circle at 90% 40%, rgba(34, 211, 238, 0.08), rgba(34, 211, 238, 0) 60%),
-    rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.86);
 }
 
 main > .section:nth-of-type(odd)::before {
-  background:
-    radial-gradient(850px circle at 80% 10%, rgba(43, 127, 255, 0.08), rgba(43, 127, 255, 0) 60%),
-    rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.86);
 }
 
 .section__header {
@@ -137,7 +132,7 @@ main > .section:nth-of-type(odd)::before {
   max-width: none;
   height: 100%;
   min-height: 112px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(15, 23, 42, 0.26);
   opacity: 0.5;
 }
 
@@ -167,7 +162,7 @@ main > .section:nth-of-type(odd)::before {
   width: 100%;
   max-width: none;
   height: min(44vh, 340px);
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(15, 23, 42, 0.18);
 }
 
 .re-sec--mural-tr {
@@ -181,7 +176,7 @@ main > .section:nth-of-type(odd)::before {
   width: min(50vw, 400px);
   height: min(58vh, 460px);
   max-height: 380px;
-  color: rgba(255, 255, 255, 0.22);
+  color: rgba(15, 23, 42, 0.16);
 }
 
 .re-sec--mural-bl {
@@ -194,7 +189,7 @@ main > .section:nth-of-type(odd)::before {
 .re-sec--mural-bl .re-sec__svg {
   width: min(46vw, 360px);
   height: min(52vh, 420px);
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(15, 23, 42, 0.15);
 }
 
 .re-sec--mural-tl {
@@ -207,7 +202,7 @@ main > .section:nth-of-type(odd)::before {
 .re-sec--mural-tl .re-sec__svg {
   width: min(48vw, 380px);
   height: min(54vh, 440px);
-  color: rgba(255, 255, 255, 0.18);
+  color: rgba(15, 23, 42, 0.14);
 }
 
 .re-sec--roofs {
@@ -225,7 +220,7 @@ main > .section:nth-of-type(odd)::before {
   width: min(92%, 760px);
   height: 88px;
   max-height: 100px;
-  color: rgba(255, 255, 255, 0.16);
+  color: rgba(15, 23, 42, 0.14);
 }
 
 .skip {
@@ -259,7 +254,7 @@ main > .section:nth-of-type(odd)::before {
 }
 
 .h1__muted {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--muted);
 }
 
 .h2 {
@@ -300,7 +295,7 @@ main > .section:nth-of-type(odd)::before {
   isolation: isolate;
   overflow: hidden;
   padding: clamp(44px, 6.5vw, 72px) 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
   background-color: var(--bg);
   text-align: left;
 }
@@ -331,22 +326,21 @@ main > .section:nth-of-type(odd)::before {
   z-index: 1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 100% 92% at 50% 48%, transparent 28%, rgba(0, 0, 0, 0.48) 100%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.52) 0%, rgba(0, 0, 0, 0.14) 46%, rgba(0, 0, 0, 0.4) 100%),
-    linear-gradient(135deg, rgba(43, 127, 255, 0.045) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 92% at 50% 48%, transparent 38%, rgba(15, 23, 42, 0.10) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.52) 0%, rgba(255, 255, 255, 0.18) 46%, rgba(255, 255, 255, 0.46) 100%),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 34px,
-      rgba(255, 255, 255, 0.065) 34px,
-      rgba(255, 255, 255, 0.065) 35px
+      rgba(15, 23, 42, 0.055) 34px,
+      rgba(15, 23, 42, 0.055) 35px
     ),
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 34px,
-      rgba(255, 255, 255, 0.055) 34px,
-      rgba(255, 255, 255, 0.055) 35px
+      rgba(15, 23, 42, 0.045) 34px,
+      rgba(15, 23, 42, 0.045) 35px
     );
 }
 
@@ -366,7 +360,7 @@ main > .section:nth-of-type(odd)::before {
   font-weight: 800;
   line-height: 1.14;
   letter-spacing: -0.03em;
-  color: rgba(255, 255, 255, 0.97);
+  color: var(--text);
 }
 
 .problems-band__intro {
@@ -374,7 +368,7 @@ main > .section:nth-of-type(odd)::before {
   max-width: 62ch;
   font-size: clamp(1rem, 2.3vw, 1.14rem);
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--muted);
 }
 
 .problems-band__list {
@@ -391,7 +385,7 @@ main > .section:nth-of-type(odd)::before {
   padding-left: 1.25em;
   font-size: clamp(0.96rem, 2.1vw, 1.06rem);
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--text);
 }
 
 .problems-band__list li::before {
@@ -420,9 +414,9 @@ main > .section:nth-of-type(odd)::before {
   left: 0;
   right: 0;
   z-index: 50;
-  background: rgba(7, 11, 22, 0.62);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
 }
 
 .header__inner {
@@ -444,14 +438,14 @@ main > .section:nth-of-type(odd)::before {
 }
 
 .brand:hover {
-  background: rgba(255, 255, 255, 0.07);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  background: transparent;
+  transform: none;
+  box-shadow: none;
 }
 
 .brand:active {
-  transform: translateY(0);
-  background: rgba(255, 255, 255, 0.05);
+  transform: none;
+  background: transparent;
 }
 
 .brand:focus-visible {
@@ -469,19 +463,19 @@ main > .section:nth-of-type(odd)::before {
 }
 
 .brand:hover .brand__logo {
-  transform: scale(1.06);
-  filter: drop-shadow(0 0 10px rgba(43, 127, 255, 0.35));
+  transform: none;
+  filter: none;
 }
 
 .brand__name {
   font-weight: 800;
   letter-spacing: -0.01em;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(15, 23, 42, 0.92);
   transition: color 200ms ease;
 }
 
 .brand:hover .brand__name {
-  color: rgba(255, 255, 255, 1);
+  color: rgba(15, 23, 42, 0.92);
 }
 
 .nav {
@@ -491,7 +485,7 @@ main > .section:nth-of-type(odd)::before {
 }
 
 .nav__link {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(15, 23, 42, 0.78);
   font-weight: 600;
   font-size: 0.95rem;
   padding: 10px 10px;
@@ -500,8 +494,8 @@ main > .section:nth-of-type(odd)::before {
 }
 
 .nav__link:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.92);
+  background: rgba(15, 23, 42, 0.04);
+  color: rgba(15, 23, 42, 0.92);
 }
 
 .nav__link:focus-visible {
@@ -510,15 +504,15 @@ main > .section:nth-of-type(odd)::before {
 }
 
 .nav a.nav--current {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(15, 23, 42, 0.95);
   text-decoration: underline;
   text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
-  text-decoration-color: rgba(43, 127, 255, 0.85);
+  text-underline-offset: 10px;
+  text-decoration-color: rgba(37, 99, 235, 0.85);
 }
 
 .nav a.nav--current.nav__link:hover {
-  text-decoration-color: rgba(34, 211, 238, 0.75);
+  text-decoration-color: rgba(14, 165, 233, 0.75);
 }
 
 .navToggle {
@@ -548,7 +542,7 @@ main > .section:nth-of-type(odd)::before {
   width: 20px;
   height: 2px;
   flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.86);
+  background: currentColor;
   margin: 0;
   border-radius: 2px;
 }
@@ -579,9 +573,9 @@ main > .section:nth-of-type(odd)::before {
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, var(--accent), #356bff 55%, #1ec8e9);
-  color: #041021;
-  border-color: rgba(255, 255, 255, 0.08);
+  background: #2563eb;
+  color: #ffffff;
+  border-color: rgba(15, 23, 42, 0.10);
   box-shadow: 0 16px 40px rgba(43, 127, 255, 0.22);
 }
 
@@ -597,13 +591,13 @@ main > .section:nth-of-type(odd)::before {
 }
 
 .btn--ghost {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.9);
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.14);
+  color: rgba(15, 23, 42, 0.9);
 }
 
 .btn--ghost:hover {
-  background: rgba(255, 255, 255, 0.09);
+  background: rgba(15, 23, 42, 0.06);
   transform: translateY(-1px);
 }
 
@@ -619,9 +613,9 @@ main > .section:nth-of-type(odd)::before {
 
 .link {
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(15, 23, 42, 0.88);
   text-decoration: underline;
-  text-decoration-color: rgba(43, 127, 255, 0.55);
+  text-decoration-color: rgba(37, 99, 235, 0.50);
   text-underline-offset: 4px;
 }
 
@@ -657,7 +651,7 @@ main > .section:nth-of-type(odd)::before {
   min-width: 1100px;
   height: min(58vh, 420px);
   min-height: 200px;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(15, 23, 42, 0.18);
   display: block;
 }
 
@@ -676,7 +670,7 @@ main > .section:nth-of-type(odd)::before {
   width: min(92%, 440px);
   height: min(88vh, 580px);
   max-height: none;
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(15, 23, 42, 0.16);
   pointer-events: none;
 }
 
@@ -821,16 +815,16 @@ main > .section:nth-of-type(odd)::before {
 
 .portrait__caption {
   padding: 14px 14px 16px;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--muted);
   font-size: 0.95rem;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(15, 23, 42, 0.10);
   border-radius: var(--radius);
   padding: 18px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.10);
 }
 
 .card--note {
@@ -874,8 +868,8 @@ main > .section:nth-of-type(odd)::before {
   margin: 0;
   border-radius: var(--radius2);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  background: rgba(255, 255, 255, 0.82);
   box-shadow: var(--shadow);
   transform-origin: center;
   transition:
@@ -886,7 +880,7 @@ main > .section:nth-of-type(odd)::before {
 
 .about-photo:hover {
   transform: scale(1.025);
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(37, 99, 235, 0.18);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 }
 
@@ -937,8 +931,8 @@ main > .section:nth-of-type(odd)::before {
   min-height: 0;
   padding: 20px 18px 18px;
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(15, 23, 42, 0.10);
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
 }
 
@@ -981,8 +975,8 @@ main > .section:nth-of-type(odd)::before {
 
 .step:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.075);
-  border-color: rgba(43, 127, 255, 0.24);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(37, 99, 235, 0.18);
 }
 
 .step__badge {
@@ -994,8 +988,18 @@ main > .section:nth-of-type(odd)::before {
   justify-content: center;
   font-weight: 900;
   margin-bottom: 10px;
-  background: rgba(43, 127, 255, 0.18);
-  border: 1px solid rgba(43, 127, 255, 0.35);
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  color: rgba(15, 23, 42, 0.88);
+}
+
+/* „Dělám věci trochu jinak“: čísla modře, bez badge pozadí */
+#proces .step__badge {
+  background: transparent;
+  border-color: rgba(15, 23, 42, 0.28);
+  color: var(--accent);
+  font-size: 1.1rem;
+  align-self: flex-start;
 }
 
 .ctaBar {
@@ -1108,8 +1112,8 @@ main > .section:nth-of-type(odd)::before {
   margin-top: 16px;
   padding: 16px;
   border-radius: var(--radius2);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(15, 23, 42, 0.10);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1118,7 +1122,7 @@ main > .section:nth-of-type(odd)::before {
 
 .ctaInline__text {
   margin: 0;
-  color: rgba(255, 255, 255, 0.84);
+  color: var(--text);
   line-height: 1.55;
   font-weight: 700;
 }
@@ -1126,15 +1130,15 @@ main > .section:nth-of-type(odd)::before {
 .work {
   border-radius: var(--radius);
   padding: 18px;
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(15, 23, 42, 0.10);
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
 }
 
 .work:hover {
   transform: translateY(-2px);
   border-color: rgba(43, 127, 255, 0.24);
-  background: rgba(255, 255, 255, 0.075);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .work__top {
@@ -1154,7 +1158,7 @@ main > .section:nth-of-type(odd)::before {
   padding: 18px;
   border-radius: var(--radius2);
   background: linear-gradient(135deg, rgba(43, 127, 255, 0.14), rgba(255, 255, 255, 0.05));
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(15, 23, 42, 0.10);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1165,13 +1169,13 @@ main > .section:nth-of-type(odd)::before {
   margin: 0;
   padding: 18px;
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(15, 23, 42, 0.10);
 }
 
 .quote__text {
   margin: 0 0 12px;
-  color: rgba(255, 255, 255, 0.84);
+  color: var(--text);
   line-height: 1.7;
   font-weight: 650;
 }
@@ -1215,7 +1219,7 @@ main > .section:nth-of-type(odd)::before {
   font-size: 1.15rem;
   font-weight: 850;
   letter-spacing: -0.02em;
-  color: rgba(255, 255, 255, 0.94);
+  color: var(--text);
 }
 
 .showcase__subhd--process {
@@ -1232,7 +1236,7 @@ main > .section:nth-of-type(odd)::before {
 .showcase__goals-label {
   margin: 0 0 10px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--text);
 }
 
 .showcase__goal-list {
@@ -1322,10 +1326,10 @@ main > .section:nth-of-type(odd)::before {
   justify-content: center;
   font-weight: 900;
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.96);
-  background: linear-gradient(145deg, rgba(43, 127, 255, 0.32), rgba(34, 211, 238, 0.1));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+  color: rgba(15, 23, 42, 0.92);
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12);
   flex-shrink: 0;
   position: relative;
   z-index: 1;
@@ -1343,7 +1347,7 @@ main > .section:nth-of-type(odd)::before {
   font-size: 0.78rem;
   letter-spacing: -0.01em;
   line-height: 1.32;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text);
 }
 
 .showcase__swipe-hint {
@@ -1387,9 +1391,9 @@ main > .section:nth-of-type(odd)::before {
   width: 100%;
   min-height: 0;
   height: clamp(320px, 52vh, 580px);
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.10);
   background: #fff;
   overflow: hidden;
   /* Posun nahoru = skrytí horní lišty vloženého webu; 0 = plná horní část stránky */
@@ -1435,6 +1439,66 @@ main > .section:nth-of-type(odd)::before {
   align-items: start;
 }
 
+/* Sekce kontakt (Domluvme si nezávaznou konzultaci) — tmavší pocit oproti zbytku světlého webu */
+#kontakt.section::before {
+  background: linear-gradient(180deg, rgba(7, 11, 22, 0.96), rgba(7, 11, 22, 0.94));
+  border-top-color: rgba(255, 255, 255, 0.10);
+  border-bottom-color: rgba(255, 255, 255, 0.10);
+}
+
+#kontakt {
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.72);
+  --muted2: rgba(255, 255, 255, 0.56);
+}
+
+#kontakt .pill {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+#kontakt .h1,
+#kontakt .h2,
+#kontakt .h3 {
+  color: var(--text);
+}
+
+#kontakt a {
+  color: inherit;
+}
+
+#kontakt .link {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration-color: rgba(37, 99, 235, 0.60);
+}
+
+#kontakt .form {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.32);
+}
+
+#kontakt .field label {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+#kontakt .field input,
+#kontakt .field textarea {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.22);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+#kontakt .field input::placeholder,
+#kontakt .field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+#kontakt .form__success {
+  color: rgba(255, 255, 255, 0.92);
+}
+
 .pillRow {
   display: flex;
   flex-wrap: wrap;
@@ -1445,9 +1509,9 @@ main > .section:nth-of-type(odd)::before {
 .pill {
   padding: 8px 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.82);
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  color: rgba(15, 23, 42, 0.82);
   font-weight: 700;
   font-size: 0.9rem;
 }
@@ -1455,8 +1519,8 @@ main > .section:nth-of-type(odd)::before {
 .form {
   padding: 18px;
   border-radius: var(--radius2);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(15, 23, 42, 0.10);
   box-shadow: var(--shadow);
 }
 
@@ -1475,7 +1539,7 @@ main > .section:nth-of-type(odd)::before {
 .field label {
   font-weight: 800;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(15, 23, 42, 0.86);
 }
 
 .field input,
@@ -1483,9 +1547,9 @@ main > .section:nth-of-type(odd)::before {
   width: 100%;
   padding: 12px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(0, 0, 0, 0.22);
-  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+  color: rgba(15, 23, 42, 0.92);
   outline: none;
   transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
@@ -1497,7 +1561,7 @@ main > .section:nth-of-type(odd)::before {
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(15, 23, 42, 0.45);
 }
 
 .field input:focus,
@@ -1555,13 +1619,13 @@ main > .section:nth-of-type(odd)::before {
   border-radius: 16px;
   background: rgba(34, 211, 238, 0.12);
   border: 1px solid rgba(34, 211, 238, 0.22);
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(15, 23, 42, 0.88);
 }
 
 .footer {
   padding: 48px 0 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(7, 11, 22, 0.55);
+  border-top: 1px solid rgba(15, 23, 42, 0.10);
+  background: rgba(7, 11, 22, 0.92);
   backdrop-filter: blur(14px);
 }
 
@@ -1575,7 +1639,7 @@ main > .section:nth-of-type(odd)::before {
 .footer__tagline {
   margin: 0;
   max-width: 34rem;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.74);
   font-size: 0.98rem;
   line-height: 1.65;
 }
@@ -1586,7 +1650,7 @@ main > .section:nth-of-type(odd)::before {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.50);
 }
 
 .footer__contact {
@@ -1609,26 +1673,26 @@ main > .section:nth-of-type(odd)::before {
 
 .footer__contact dt {
   margin: 0;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.50);
   font-weight: 600;
 }
 
 .footer__contact dd {
   margin: 0;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.90);
 }
 
 .footer__link {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.2);
+  text-decoration-color: rgba(255, 255, 255, 0.24);
   text-underline-offset: 3px;
   transition: text-decoration-color 160ms ease, color 160ms ease;
 }
 
 .footer__link:hover {
   color: #fff;
-  text-decoration-color: rgba(43, 127, 255, 0.55);
+  text-decoration-color: rgba(37, 99, 235, 0.55);
 }
 
 .footer__nav {
@@ -1660,9 +1724,9 @@ main > .section:nth-of-type(odd)::before {
 .footer__copyright {
   margin: 40px 0 0;
   padding-top: 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 0.86rem;
-  color: var(--muted2);
+  color: rgba(255, 255, 255, 0.56);
   text-align: center;
   letter-spacing: 0.02em;
 }
@@ -1677,9 +1741,9 @@ main > .section:nth-of-type(odd)::before {
   max-width: 720px;
   padding: 16px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(7, 11, 22, 0.95);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.14);
   backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
@@ -1689,7 +1753,7 @@ main > .section:nth-of-type(odd)::before {
 
 .cookie-banner__text {
   margin: 0;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(15, 23, 42, 0.88);
   line-height: 1.5;
   flex: 1;
 }
@@ -1704,7 +1768,7 @@ main > .section:nth-of-type(odd)::before {
 
 .cookie-banner__btn {
   appearance: none;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(15, 23, 42, 0.14);
   border-radius: 12px;
   padding: 10px 14px;
   font-size: 0.95rem;
@@ -1718,14 +1782,14 @@ main > .section:nth-of-type(odd)::before {
 }
 
 .cookie-banner__btn--accept {
-  background: linear-gradient(135deg, var(--accent), #356bff 55%, #1ec8e9);
-  color: #031122;
-  border-color: rgba(255, 255, 255, 0.08);
+  background: #2563eb;
+  color: #ffffff;
+  border-color: rgba(15, 23, 42, 0.06);
 }
 
 .cookie-banner__btn--reject {
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.9);
+  background: rgba(15, 23, 42, 0.04);
+  color: rgba(15, 23, 42, 0.88);
 }
 
 /* Reveal animation (JS toggles .is-visible) */
@@ -1789,7 +1853,7 @@ main > .section:nth-of-type(odd)::before {
     transform: translate(-50%, -42%);
     width: min(100%, 360px);
     height: min(65vh, 500px);
-    color: rgba(255, 255, 255, 0.28);
+    color: rgba(15, 23, 42, 0.14);
   }
 
   .re-sec--skyline {
@@ -1824,7 +1888,7 @@ main > .section:nth-of-type(odd)::before {
 
   #video .re-sec--questions .re-sec__svg {
     height: min(36vh, 260px);
-    color: rgba(255, 255, 255, 0.18);
+    color: rgba(15, 23, 42, 0.14);
   }
 
   .re-sec--roofs {
@@ -1939,7 +2003,7 @@ main > .section:nth-of-type(odd)::before {
     font-weight: 650;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(15, 23, 42, 0.50);
     transition: opacity 0.35s ease, max-height 0.35s ease, margin 0.35s ease, padding 0.35s ease;
   }
 
@@ -1978,7 +2042,7 @@ main > .section:nth-of-type(odd)::before {
     width: 44px;
     pointer-events: none;
     z-index: 2;
-    background: linear-gradient(90deg, transparent, rgba(7, 11, 22, 0.88));
+    background: linear-gradient(90deg, transparent, rgba(246, 247, 251, 0.92));
     transition: opacity 0.35s ease;
   }
 
@@ -2037,9 +2101,9 @@ main > .section:nth-of-type(odd)::before {
     max-width: none;
     padding: 14px;
     display: block;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    background: rgba(7, 11, 22, 0.98);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(15, 23, 42, 0.14);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.16);
   }
 
   .cookie-banner__actions {
@@ -2062,12 +2126,12 @@ main > .section:nth-of-type(odd)::before {
   .nav {
     position: fixed;
     top: var(--header-h);
-    right: 16px;
-    left: 16px;
+    right: 0;
+    left: 0;
     padding: 12px;
-    background: rgba(7, 11, 22, 0.92);
+    background: #ffffff;
     border: 0;
-    border-radius: 18px;
+    border-radius: 0;
     backdrop-filter: blur(14px);
     box-shadow: var(--shadow);
     display: none;

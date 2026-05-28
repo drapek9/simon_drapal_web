@@ -72,12 +72,12 @@
   }
 
   const storedChoice = getStoredChoice();
-  if (storedChoice === "accepted") {
-    loadAnalytics();
-    return;
-  }
 
-  if (storedChoice === "rejected") {
+  // Analytics načti vždy hned po startu aplikace bez ohledu na volbu.
+  loadAnalytics();
+
+  // Pokud už uživatel někdy zvolil, banner už nezobrazuj.
+  if (storedChoice === "accepted" || storedChoice === "rejected") {
     return;
   }
 

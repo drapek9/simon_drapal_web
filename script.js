@@ -44,7 +44,15 @@ function setupSmoothScroll() {
       const target = document.getElementById(href.slice(1));
       if (!target) return;
       e.preventDefault();
-      target.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "start" });
+      const header = $(".header");
+      const headerH = header ? header.getBoundingClientRect().height : 0;
+      const targetTop = target.getBoundingClientRect().top + window.scrollY;
+
+      // Chceme, aby horní hrana sekce lícovala se spodní hranou fixní navigace.
+      window.scrollTo({
+        top: Math.max(0, targetTop - headerH),
+        behavior: prefersReducedMotion() ? "auto" : "smooth",
+      });
 
       // Close mobile menu if open
       if (document.body.classList.contains("nav-open")) {
@@ -167,6 +175,24 @@ function setupMobileNav() {
     if (!nav) return;
     if (btn.contains(e.target)) return;
     if (!nav.contains(e.target)) close();
+  });
+}
+
+function setupBrandScrollToTop() {
+  const brand = document.querySelector(".brand");
+  if (!brand) return;
+
+  brand.addEventListener("click", (e) => {
+    // Chceme skutečný top stránky (0), ne kotvu #top (ta může nechat „mezeru“).
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+
+    // Close mobile menu if open
+    if (document.body.classList.contains("nav-open")) {
+      document.body.classList.remove("nav-open");
+      const btn = document.querySelector(".navToggle");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    }
   });
 }
 
@@ -405,6 +431,7 @@ function setupForm() {
 setupNavCurrentSection();
 setupSmoothScroll();
 setupMobileNav();
+setupBrandScrollToTop();
 setupReveal();
 setupShowcaseTimelineSwipeHint();
 setupForm();
