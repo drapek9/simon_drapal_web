@@ -1758,6 +1758,17 @@ main > .section:nth-of-type(odd)::before {
   flex: 1;
 }
 
+.cookie-banner__link {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-banner__link:hover {
+  color: #1d4ed8;
+}
+
 .cookie-banner__actions {
   display: flex;
   gap: 10px;

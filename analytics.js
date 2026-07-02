@@ -1,9 +1,8 @@
 /**
- * Google Analytics 4 (gtag.js)
- * Measurement ID najdeš v GA: Admin → Data streams → tvůj web → Measurement ID (G-XXXXXXXXXX).
- * https://analytics.google.com/
+ * Google Analytics 4 (gtag.js) – tag je v <head>, měření se zapíná po souhlasu.
+ * Measurement ID: Admin → Data streams → web → Measurement ID.
  *
- * Měřené události (stejné jako dřív u Firebase):
+ * Měřené události:
  * - contact_form_submit … úspěšné odeslání kontaktního formuláře
  * - cta_consult_click … parametr cta_placement: nav | hero | problems | showcase
  * - phone_click … link_area: footer | other
@@ -11,26 +10,25 @@
  * - case_study_realtor_click … link_variant: lead_inline | open_new_tab | other
  * - nav_link_click … nav_area: header | footer, nav_target: uvod | o_mne | …
  */
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+const GA_MEASUREMENT_ID = "G-74TL5J8T6V";
 let gaInitialized = false;
 
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-  window.dataLayer.push(arguments);
+function gtagSafe() {
+  return typeof window.gtag === "function" ? window.gtag : null;
 }
 
 function initGoogleAnalytics() {
   if (!GA_MEASUREMENT_ID || gaInitialized) {
     return;
   }
+  const gtag = gtagSafe();
+  if (!gtag) {
+    return;
+  }
   gaInitialized = true;
-  gtag("js", new Date());
-  gtag("config", GA_MEASUREMENT_ID);
-
-  const s = document.createElement("script");
-  s.async = true;
-  s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
-  document.head.appendChild(s);
+  gtag("consent", "update", {
+    analytics_storage: "granted",
+  });
 }
 
 /**
@@ -40,6 +38,10 @@ function initGoogleAnalytics() {
  */
 function trackSiteEvent(name, params) {
   if (!GA_MEASUREMENT_ID || !gaInitialized) {
+    return;
+  }
+  const gtag = gtagSafe();
+  if (!gtag) {
     return;
   }
   try {
