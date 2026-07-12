@@ -62,7 +62,7 @@
           <a class="nav__link js-scroll" href="#top">Úvod</a>
           <a class="nav__link js-scroll" href="#problemy">Co Vás brzdí</a>
           <a class="nav__link js-scroll" href="#proces">Jak to funguje?</a>
-          <a class="nav__link js-scroll" href="#priklad-projektu">Příklad řešení</a>
+          <a class="nav__link js-scroll" href="#priklad-projektu">Vybrané projekty</a>
           <a class="nav__link js-scroll" href="#o-mne">O mně</a>
           <a class="btn btn--primary btn--sm js-scroll" href="#kontakt">Domluvit konzultaci</a>
         </nav>
@@ -341,99 +341,113 @@
       <section id="priklad-projektu" class="section showcase" aria-labelledby="priklad-projektu-heading">
         <div class="container">
           <header class="section__header showcase__header reveal">
-            <h2 id="priklad-projektu-heading" class="h2">Příklad projektu pro realitního makléře</h2>
-            <p class="p p--muted showcase__lead">
-              Konkrétní realizace:
-              <a
-                class="link"
-                href=" https://martinkaresreality.cz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >martinkaresreality.cz</a
-              >
-              - případová studie webu pro realitního makléře, abyste měli jasnou představu, jak může spolupráce probíhat.
-            </p>
+            <h2 id="priklad-projektu-heading" class="h2">Vybrané projekty</h2>
           </header>
 
-          <div class="showcase__grid">
-            <div class="showcase__copy reveal">
-              <h3 class="p showcase__goals-label">Cílem webu bylo:</h3>
-              <ul class="showcase__goal-list">
-                <li>přidat další způsob prezentace prodávaných nemovitostí přes vlastní webovou stránku</li>
-                <li>zvýšit důvěryhodnost realitního makléře u potenciálních klientů</li>
-                <li>profesionálně představit nabízené služby</li>
-                <li>jasně a srozumitelně vysvětlit postup spolupráce</li>
-              </ul>
-              <a class="btn btn--primary btn--lg js-scroll showcase__cta" href="#kontakt">Nezávazná konzultace</a>
-            </div>
+          <div class="showcase__carousel reveal" aria-label="Vybrané projekty">
+            <button type="button" class="showcase__arrow showcase__arrow--prev" aria-label="Předchozí projekt">
+              <span class="showcase__arrow-icon" aria-hidden="true"></span>
+            </button>
 
-            <div class="showcase__preview-col reveal">
-              <div class="showcase__preview">
-                <iframe
-                  class="showcase__iframe"
-                  src=" https://martinkaresreality.cz/"
-                  title="Živý náhled webu martinkaresreality.cz"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  allow="fullscreen"
-                ></iframe>
+            <div class="showcase__viewport">
+              <div class="showcase__track">
+                <article class="showcase__slide is-active">
+                  <div class="showcase__grid">
+                    <div class="showcase__media">
+                      <div class="showcase__preview">
+                        <img
+                          class="showcase__img"
+                          src="images/projekty/monika_zelena_web_ss.webp"
+                          alt="Náhled webu monikazelena.cz"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    </div>
+                    <div class="showcase__copy">
+                      <h3 class="showcase__name">Monika Zelená</h3>
+                      <p class="showcase__purpose">
+                        Pro Moniku jsme vytvořili web včetně vlastního systému pro správu nemovitostí.
+                        Cílem je získávat klienty a leady z vlastní činnosti - ze sociálních sítí
+                        a reklam směřujících na webovou stránku.
+                      </p>
+                      <a
+                        class="btn btn--primary showcase__detail-btn"
+                        href="https://monikazelena.cz/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Detail webu</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <article class="showcase__slide" hidden>
+                  <div class="showcase__grid">
+                    <div class="showcase__media">
+                      <div class="showcase__preview">
+                        <img
+                          class="showcase__img"
+                          src="images/projekty/michal_janousek_web_ss.webp"
+                          alt="Náhled webu michaljanousek.cz"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    </div>
+                    <div class="showcase__copy">
+                      <h3 class="showcase__name">Michal Janoušek</h3>
+                      <p class="showcase__purpose">
+                        U Michala jde o web, který ukáže prodané nemovitosti jako důkaz práce, která za ním stojí
+                        a zároveň zdůrazní odhad nemovitosti zdarma. Cílem je posílit vnímanou profesionalitu
+                        a důvěru u potenciálních klientů - včetně těch, kteří přijdou z reklam.
+                      </p>
+                      <a
+                        class="btn btn--primary showcase__detail-btn"
+                        href="https://michaljanousek.cz/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Detail webu</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <article class="showcase__slide" hidden>
+                  <div class="showcase__grid">
+                    <div class="showcase__media">
+                      <div class="showcase__preview">
+                        <img
+                          class="showcase__img"
+                          src="images/projekty/martin_kares_web_ss.webp"
+                          alt="Náhled webu martinkaresreality.cz"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    </div>
+                    <div class="showcase__copy">
+                      <h3 class="showcase__name">Martin Kareš</h3>
+                      <p class="showcase__purpose">
+                        U Martina jde o web, který srozumitelně představí nabízené služby, ukáže makléře
+                        včetně jeho zkušeností a zároveň zdůrazní reference svých klientů.
+                      </p>
+                      <a
+                        class="btn btn--primary showcase__detail-btn"
+                        href="https://martinkaresreality.cz/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Detail webu</a
+                      >
+                    </div>
+                  </div>
+                </article>
               </div>
-              <a
-                class="link showcase__open-tab"
-                href=" https://martinkaresreality.cz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Otevřít martinkaresreality.cz na nové kartě</a
-              >
             </div>
-          </div>
 
-          <div class="showcase__process reveal">
-            <h3 class="showcase__subhd showcase__subhd--process">Postup spolupráce</h3>
-            <p class="showcase__swipe-hint" aria-hidden="true">
-              <span class="showcase__swipe-hint__text">Swipe doprava</span>
-              <span class="showcase__swipe-hint__arrow"></span>
-            </p>
-            <div class="showcase__timeline-rail">
-            <ol class="showcase__timeline" aria-label="Postup spolupráce u projektu">
-              <li class="showcase__tstep">
-                <span class="showcase__tstep-num" aria-hidden="true">1</span>
-                <div class="showcase__tstep-body">
-                  <h4 class="showcase__tstep-title">Nezávazná konzultace a pochopení potřeb</h4>
-                </div>
-              </li>
-              <li class="showcase__tstep">
-                <span class="showcase__tstep-num" aria-hidden="true">2</span>
-                <div class="showcase__tstep-body">
-                  <h4 class="showcase__tstep-title">Vytvoření webového návrhu na míru</h4>
-                </div>
-              </li>
-              <li class="showcase__tstep">
-                <span class="showcase__tstep-num" aria-hidden="true">3</span>
-                <div class="showcase__tstep-body">
-                  <h4 class="showcase__tstep-title">Projití návrhu a uzavření spolupráce</h4>
-                </div>
-              </li>
-              <li class="showcase__tstep">
-                <span class="showcase__tstep-num" aria-hidden="true">4</span>
-                <div class="showcase__tstep-body">
-                  <h4 class="showcase__tstep-title">Realizace webu a finální úpravy</h4>
-                </div>
-              </li>
-              <li class="showcase__tstep">
-                <span class="showcase__tstep-num" aria-hidden="true">5</span>
-                <div class="showcase__tstep-body">
-                  <h4 class="showcase__tstep-title">Dokončení projektu, nasazení webu a SEO nastavení</h4>
-                </div>
-              </li>
-              <li class="showcase__tstep">
-                <span class="showcase__tstep-num" aria-hidden="true">6</span>
-                <div class="showcase__tstep-body">
-                  <h4 class="showcase__tstep-title">Sledování výkonu po dobu 3 měsíců</h4>
-                </div>
-              </li>
-            </ol>
-            </div>
+            <button type="button" class="showcase__arrow showcase__arrow--next" aria-label="Další projekt">
+              <span class="showcase__arrow-icon" aria-hidden="true"></span>
+            </button>
           </div>
         </div>
       </section>
@@ -616,7 +630,7 @@
               <li><a class="footer__nav-link js-scroll" href="#problemy">Problémy</a></li>
               <li><a class="footer__nav-link js-scroll" href="#o-mne">O mně</a></li>
               <li><a class="footer__nav-link js-scroll" href="#proces">Jak to funguje?</a></li>
-              <li><a class="footer__nav-link js-scroll" href="#priklad-projektu">Příklad řešení</a></li>
+              <li><a class="footer__nav-link js-scroll" href="#priklad-projektu">Vybrané projekty</a></li>
               <li><a class="footer__nav-link js-scroll" href="#kontakt">Kontakt</a></li>
               <li><a class="footer__nav-link" href="privacy-policy.html">Zásady ochrany osobních údajů</a></li>
               <li><a class="footer__nav-link" href="cookies.html">Zásady cookies</a></li>

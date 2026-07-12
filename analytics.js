@@ -94,9 +94,9 @@ function setupClickAnalytics() {
         return;
       }
 
-      if (/martinkaresreality\.cz/i.test(href)) {
+      if (/martinkaresreality\.cz|monikazelena\.cz|michaljanousek\.cz/i.test(href)) {
         let link_variant = "other";
-        if (a.classList.contains("showcase__open-tab")) {
+        if (a.classList.contains("showcase__detail-btn") || a.classList.contains("showcase__open-tab")) {
           link_variant = "open_new_tab";
         } else if (a.closest(".showcase__lead")) {
           link_variant = "lead_inline";
