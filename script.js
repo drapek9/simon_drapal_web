@@ -390,10 +390,33 @@ function setupForm() {
   });
 }
 
+function setupPhaseHoverSpotlight() {
+  if (prefersReducedMotion()) return;
+
+  const phases = document.querySelectorAll(".phase");
+  if (!phases.length) return;
+
+  phases.forEach((phase) => {
+    phase.addEventListener("pointermove", (e) => {
+      const rect = phase.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      phase.style.setProperty("--phase-x", `${x}%`);
+      phase.style.setProperty("--phase-y", `${y}%`);
+    });
+
+    phase.addEventListener("pointerleave", () => {
+      phase.style.setProperty("--phase-x", "50%");
+      phase.style.setProperty("--phase-y", "50%");
+    });
+  });
+}
+
 setupNavCurrentSection();
 setupSmoothScroll();
 setupMobileNav();
 setupBrandScrollToTop();
 setupReveal();
 setupShowcaseCarousel();
+setupPhaseHoverSpotlight();
 setupForm();
